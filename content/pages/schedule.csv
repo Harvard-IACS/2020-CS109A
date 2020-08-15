@@ -1,1 +1,17 @@
-﻿
+Week,Lecture (Mon),Lecture (Wed),Lecture (Fri),Advanced Section (Wed),Assignment (R:Released Tue - D:Due Wed)
+1,,"Lecture 1: What is Data Science?  General Introduction, Ethics !!! ",Lecture 2: EDA with Pandas,,R:HW0
+2,,Lecture 3: Web Scraping ,Lecture 4: Pandas on steroids (sql like) ,,R:HW1 - D:HW0
+3,Lecture 5: kNN Regression and Linear Regression,Lecture 6: Multi and Poly Regression,Lecrture 7:  Modeling knn and Linear R with skleanr,Advanced Section 1: Linear Algebra and Hypothesis Testing,R:HW2 - D:HW1
+4,Lecture 8: Basic Statistics for Data Science,Lecture 9: Inference: Bootstrap and CI ,"Lecture 10: matplotlib; Bootstrap, inference ",Advanced Section 2: Regularization Methods and Their Justifications,R:HW3 - D:HW2
+5,Lecture 11: Cross-Validation & Model Selection ,Lecture 12: Regularization: Ridge & Lasso ,Lecture 13: Regularization Hands on,No Advanced Section,No Assignment
+6,Lecture 14:  Visualization for Communication,Lecture 15: Case Study 1 [project related],Lecture 16: kNN classification and Logistic Regression I,Advanced Section 3:Generalized Linear Models,R:HW4 (individual) - D:HW3
+7,No Lecture (Holiday),Lecture 17: Logistic Regression II,Lecture 18: Multi class Classification (introduce softmax) ,No Advanced Section,No Assignment
+8,"Lecture 19:  Dealing with missing data, imputation",Lecture 20: PCA,Lecure 21: PCA ?,Advanced Sections 4: PCA,R:HW5 - D:HW4
+9,Lecture 22: Classification Trees,Lecture 23: Regression Trees Bagging RF,Lecture 22: Hyperparameters and choices ,No Advanced Section,R:HW6 - D:HW5
+10,Lecture 25: Boosting Methods for Regression,Lecture 26: Boosting Methods for Classification,Lecture 27: Case Study 2,No Advanced Section,No Assignment
+11,Lecture 28: Neural Networks 1-Perceptron and MLP,"Lecture 29: NN 2. Neural Networks 2.  Anatomy of NN, design choices ",Lecture 30: Tensorflow2,Advanced Sections 5: Decision Trees & Ensemble Methods,R:HW7 (individual) -  D:HW6
+12,"Lecture 31: Neural Networks 4.Back Propagation, SGD","Lecture 32: Regularization methods, dropout",Lecture 33:  Full worked example of regression and classification FFNN,Advanced Sections 6: Solvers,No Assignment
+13,Lecture 34: EthiCS, , ,,R:HW8 - D:HW7 *[Due on Tuesday]*
+14,Lecture 35: Experimental Design and Testing ,Lecture 36: Visualization for Model Interpretation; Lime and SHAPLEY,Lab 13: Web Dev for Final Projects,,D:HW8
+15,,,,Reading Period,
+16,,,,Finals Week,
