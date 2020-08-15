@@ -16,8 +16,8 @@ COLOR = '#c90016'
 # ex. ('Link Name', 'URL')
 MENUITEMS = [
     ('Syllabus', 'pages/syllabus.html'),
-    ('Calendars', 'pages/calendars.html'),
-    #('Schedule', 'pages/schedule.html'),
+    #('Calendars', 'pages/calendars.html'),
+    ('Schedule', 'pages/schedule.html'),
     #('Materials', 'pages/materials.html'),
     #('Videos', 'pages/videos.html'),
     #('Modules', 'pages/modules.html'),
