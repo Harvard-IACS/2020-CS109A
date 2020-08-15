@@ -1,0 +1,1 @@
+var tipuesearch = {"pages":[{"title":"Schedule","text":"﻿","tags":"pages","url":"pages/schedule.html"},{"title":"Lecture 0","text":"Lecture 0","tags":"Lectures","url":"lectures/lecture0/"}]}
