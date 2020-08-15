@@ -10,7 +10,7 @@ SITEURL = 'https://harvard-iacs.github.io/2020-CS109A'
 
 GITHUB = 'https://github.com/Harvard-IACS/2020-CS109A'
 
-COLOR = '#DC143C'
+COLOR = '#c90016'
 
 # Define Navbar links
 # ex. ('Link Name', 'URL')
