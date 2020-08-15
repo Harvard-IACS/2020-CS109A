@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 img {
@@ -13,8 +13,8 @@ img {
 }
 
 .navbar {
-  background-color: #A51C30;
-  font-family: 'Roboto Condensed', Helvetica, sans-serif;
+  background-color: #a51c30;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
 }
 
 .navbar .navbar-brand {
@@ -44,26 +44,26 @@ img {
   border: 0;
 }
 
-
 .footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 90px;
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
-  font-family: 'Roboto Condensed', Helvetica, sans-serif;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
 }
 
-table td, table th {
-    border: 1px solid #ddd;
-    padding: 8px;
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-table tr:hover {
+table tbody tr:hover {
   background-color: #ddd;
 }
 
@@ -105,7 +105,7 @@ table thead {
 .tipue_search_content_title {
   font-weight: 600;
   font-size: x-large;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .tipue_search_content_url {
