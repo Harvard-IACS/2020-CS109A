@@ -23,7 +23,7 @@ MENUITEMS = [
     #('Modules', 'pages/modules.html'),
     #('Projects', 'pages/projects.html'),
     #('FAQ', 'pages/faq.html'),
-    ('Resources', 'pages/resources.html')
+    #('Resources', 'pages/resources.html')
 
 #    ('Sections', 'category/sections.html')
 ]
