@@ -1,4 +1,4 @@
-Title: Syllabus-DRAFT
+Title: Syllabus 
 Author: Pavlos Protopapas
 Slug: syllabus
 Date: 2020-08-16
