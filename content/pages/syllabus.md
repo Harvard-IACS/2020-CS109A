@@ -1,6 +1,7 @@
-Title: Syllabus
+Title: Syllabus-DRAFT
+Author: Pavlos Protopapas
 Slug: syllabus
-Date: 2020-07-28
+Date: 2020-08-16
 
 <style>
 pre {
@@ -35,11 +36,11 @@ CS 109a, AC 209a, Stat 121a, or CSCI E-109a
 
 [Pavlos Protopapas](mailto:pavlos@seas.harvard.edu) (SEAS), [Kevin Rader](mailto:rader@stat.harvard.edu) (Statistics), & [Chris Tanner](mailto:christanner@seas.harvard.edu) (SEAS)
 
-**Lab Instructor:** Eleni Kaxiras
+**Lab Instructor:** Eleni Kaxiras (SEAS) 
 
 **Lectures:** Mon, Wed, Fri at 9am-10:15am and 3pm-4:15pm (tentative)
 
-**Sections:**  Fri 10:30-11:45 am and Mon 8:30-9:45 pm. 
+**Sections:**  Fri 1:30-2:45 pm and Mon 8:30-9:45 pm. 
 
 **Advanced Sections:** Wed at 12pm (tentative)
 
