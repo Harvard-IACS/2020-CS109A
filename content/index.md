@@ -43,6 +43,11 @@ pre {
 <p><strong>Lab Leaders:</strong>  Eleni Kaxiras</p>
 <hr>
 
+<pre><strong>Shopping Week Office Hours:</strong> 
+<br />Monday: 11-noon [Chris Tanner] ,&nbsp; 8-9pm [Pavlos Protopapas ] <br />Tuesday: 9-10 am [Pavlos Protopapas] , 3-4pm [Kevin Rader]
+Wednesday: 9-10 am [Kevin Rader] , 11:30 - 12:30 [Chris Tanner] , 9-10 pm [Pavlos Protopapas]<br /><span>Thursday: &nbsp;10-11 am [Chris Tanner].&nbsp; 3-4 pm [Kevin Rader]&nbsp;<br /></span><span>Friday:&nbsp; 1-2 pm [Pavlos Protopapas]</span></pre>
+
+
 <p>Welcome to CS109a/STAT121a/AC209a, also offered by the DCE as CSCI E-109a, Introduction to Data Science. This course is the first half of a one‐year course to data science. We will focus on the analysis of data to perform predictions using statistical and machine learning methods. Topics include data scraping, data management, data visualization, regression and classification methods, and deep neural networks. You will get ample practice through weekly homework assignments. The class material integrates the five key facets of an investigation using data:
 <br/><br/>
 
