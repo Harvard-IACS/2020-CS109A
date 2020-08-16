@@ -75,6 +75,18 @@ Video recordings of the live stream will be made available within 24 hours after
 #### Lectures <a name='lectures'></a>
 The class meets, virtually, three days a week for lectures (M, W, F). The same lecture will be given twice each day: once in the morning and again in the afternoon, to accommodate students in different time zones. Mondays and Wednesdays will be mostly lecture content with some hands-on lab work, whereas Fridays will be the inverse (mostly hands-on lab work). Attending and participating in lectures is a crucial component of learning the material presented in this course.
 
+**What to expect** 
+![Class Structure](ClassStructure1.jpeg)
+
+A lecture will have the following pedagogy layout which will be repeated:
+
++ Asynchronous pre-class exercises of approxmately 30 min. This will include, reading from the textbooks or other sources, watching videos to prepare you for the class.  
++ Approx. 10 minutes of Q&A regarding the pre-class exercises and/or review of homework and quiz questions. 
++ Live online instruction followed by a short Q/A session 
++ Hands-on exercises, on the ED platform.
+Sessions will help students develop the intuition for the core concepts, provide the necessary mathematical background, and provide guidance on technical details.
+Sessions will be accompanied by relevant examples to clarify key concepts and techniques.
+
 #### Quizzes <a name='in-class-quizzes'></a>
 At the end of each lecture, there will be a short, graded quiz that will cover the pre-class and in-class material; there will be no AC209a content in the quizzes.  The quizzes will be available for 36 hours after posting.
 

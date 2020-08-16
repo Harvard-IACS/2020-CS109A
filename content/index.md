@@ -8,7 +8,7 @@ Fall 2020 <br><br>
 <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas">Pavlos Protopapas</a>,  <a href='https://statistics.fas.harvard.edu/people/kevin-rader'>Kevin A. Rader</a>, and <a href="https://iacs.seas.harvard.edu/people/chris-tanner">Chris Tanner</a></h5>
 
 Zoom IDs: <br>
-[Pavlos Protopapas](https://harvard-iacs.github.io/2020-CS109A/) <br> 
+[Pavlos Protopapas](https://harvard.zoom.us/my/pavlosprotopapas) <br> 
 [Kevin Rader]() <br>
 [Chris Tanner]()
 
