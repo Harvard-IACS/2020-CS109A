@@ -1,7 +1,7 @@
 Title: Syllabus 
-Author: Pavlos Protopapas
+Author: Pavlos Protopapas, Kevin Rader, Chris Tanner
 Slug: syllabus
-Date: 2020-08-16
+Date: 2020-08-17
 
 <style>
 pre {
@@ -226,7 +226,7 @@ If you discover that your answer to a homework problem was correct but it was ma
 <strong>If you decide to send a regrade request</strong>, send an email to the Helpline with subject line "Regrade HW1: Grader=johnsmith" &nbsp;replacing 'HW1' with the current assignment and 'johnsmith' with the name of the grader within  </span><strong>48 hours of the grade release</strong>.
 
 #### Zoom Expectations:
-Despite being remote and distributed, we want everyone to participate and engage with fellow classmates and staff. To this end, we **request for everyone to leave their video on during class.** We fully understand that some may be uncomfortable or unable to do so, for various personal reasons. We respect your decision and empathize for any situation that may arise. Nonetheless, if possible, we strongly ask for you to please leave your video on.
+Despite being remote and distributed, we want everyone to participate and engage with fellow classmates and staff. To this end, we **request for everyone to leave his/her/their video on during class.** We fully understand that some may be uncomfortable or unable to do so, for various personal reasons. We respect your decision and empathize for any situation that may arise. Nonetheless, if possible, we strongly ask for you to please leave your video on.
 
 Many are getting accustomed to Zoom for the first time. While it is understandable to have some glitches, mistakes, and faux pas, some mistakes can be largely disruptive to such a large audience like that of our class. Please familiarize yourself to Zoom before the semester begins. In particular, please:
 

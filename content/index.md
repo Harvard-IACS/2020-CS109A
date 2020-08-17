@@ -1,5 +1,5 @@
 Title: CS109a: Introduction to Data Science <br>
-Date: 2020-08-15
+Date: 2020-08-17
 save_as: index.html
 
 
@@ -10,7 +10,7 @@ Fall 2020 <br><br>
 Zoom IDs: <br>
 [Pavlos Protopapas](https://harvard.zoom.us/my/pavlosprotopapas) <br> 
 [Kevin Rader]() <br>
-[Chris Tanner]()
+[Chris Tanner](https://harvard.zoom.us/my/christanner) (password is 'cs109')
 
 <hr>
 
