@@ -73,7 +73,7 @@ The lectures will be live-streamed and can be accessed through the Zoom section 
 Video recordings of the live stream will be made available within 24 hours after the event, and will be accessible from the Lecture Video section on Canvas.
 
 #### Lectures <a name='lectures'></a>
-The class meets, virtually, three days a week for lectures (M, W, F). The same lecture will be given twice each day: once in the morning and again in the afternoon, to accommodate students in different time zones. Mondays and Wednesdays will be mostly lecture content with some hands-on lab work, whereas Fridays will be the inverse (mostly hands-on lab work). Attending and participating in lectures is a crucial component of learning the material presented in this course.
+The class meets, virtually, three days a week for lectures (M, W, F). The same lecture will be given twice each day: once in the morning and again in the afternoon, to accommodate students in different time zones. Mondays and Wednesdays will be mostly lecture content with some hands-on coding, whereas Fridays will be the inverse (mostly hands-on coding). Attending and participating in lectures is a crucial component of learning the material presented in this course.
 
 **What to expect** 
 ![Class Structure](https://github.com/Harvard-IACS/2020-CS109A/blob/master/content/pages/ClassStructure.png?raw=true)
@@ -143,7 +143,7 @@ AC209a students will have additional homework content for most assignments worth
 Students are expected to be actively engaged with the course. This includes:
 
 1. Attending and participating in lectures (or the follow-up session later in the day)
-2. Making use of resources such as office hours, labs, and sections
+2. Making use of resources such as office hours and sections
 3. Participating in the Ed discussion forum — both through asking thoughtful questions and by answering the questions of others
 
 Despite being remote, we aim to make this course as interactive, stimulating, and fun as always, and we rely on each of you to contribute your awesome uniqueness.
@@ -193,7 +193,7 @@ In particular:
 * if you work with a fellow student but decide to submit individual assignments, include the name of each other in the designated area of the submission.
 * if you work with a fellow student and want to submit the same assignment, you need to form a group prior to the submission. Details in the assignment. Remember, not all assignments will permit group submissions.
 * you need to write your solutions entirely on your own or with your collaborator (e.g., not entirely from Google search results)
-* you are welcome to take ideas from code presented in labs, lecture, or sections, but you need to change it, adapt it to your style, and ultimately write your own. We do not want to see code copied verbatim from the above sources.
+* you are welcome to take ideas from code presented in lecture or section, but you need to change it, adapt it to your style, and ultimately write your own. We do not want to see code copied verbatim from the above sources.
 * if you use code found on the internet, books, or other sources you need to cite those sources.
 * you should not view any written materials or code created by other students for the same assignment;
 * you may not provide or make available solutions to individuals who take or may take this course in the future.
