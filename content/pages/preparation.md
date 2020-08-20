@@ -3,6 +3,21 @@ Slug:preparation
 Author: Pavlos Protopapas
 Date: 2020-08-18
 
+In order to get the most out of CS109A, knowledge of multivariate calculus, probability theory, statistics, and some basic linear algebra (e.g., matrix operations, eigenvectors, etc.) is suggested.  Below are some resources for self-assessment and review:
+
+- [Multivariate Calculus](https://ocw.mit.edu/courses/mathematics/18-02-multivariable-calculus-fall-2007/exams/): multiple exams /w solutions
+
+- Linear Algebra: multiple exams /w solutions [1](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/exams/), [2](http://abacus.bates.edu/~etowne/205exams.htm)
+
+- Probability: [exams with solutions](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/exams/) and [problem sets with solutions](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/exams/)
+
+- Statistics: multiple pairs of exam questions and answers [Q1](http://www.u.arizona.edu/~kuchi/Courses/MAT167/Files/EXQ_EX.3.2009.Spring.pdf), [A1](http://www.u.arizona.edu/~kuchi/Courses/MAT167/Files/EXS_EX.3.2009.Spring.pdf), [Q2](http://www.u.arizona.edu/~kuchi/Courses/MAT167/Files/EXQ_EX.3.2008.Fall.pdf), [A2](http://www.u.arizona.edu/~kuchi/Courses/MAT167/Files/EXS_EX.3.2008.Fall.pdf), [Q3](http://www.utsc.utoronto.ca/~butler/b22/f2011-q.pdf), [A3](http://www.utsc.utoronto.ca/~butler/b22/f2011.pdf)
+
+Here is a useful textbook for reviewing many of the above topics: [Mathematics for Machine Learning](https://mml-book.github.io/) 
+
+Note: you can be successful in the course (assignments, quizzes, etc.) with the listed pre-requisites, but some of the material presented in lectures may be more easily understood with more background.
+
+
 TThis course dives right into core Machine Learning topics. For this, students are expected to be fluent in Python programming. You can familiarize yourself with Python by completing online tutorials. Additionally, there are free Basics Python courses that cover all necessary python topics. You are also expected to be able to manipulate data using pandas DataFrames, perform basic operations with numpy arrays, and make use of basic plotting functions (e.g. line chart, histogram, scatter plot, bar chart) from matplotlib.
 
 
@@ -44,7 +59,6 @@ To make the most of this course, we highly recommend you follow the given guidel
 Ensure you have a good internet connection. As the course is entirely online, you must have strong internet to avoid missing out on the lecture.
 
 This course is designed to have healthy interactions to understand the material. Hence, it is vital to have a good audio system. You should be able to listen to lectures as well as respond to questions during one.
-
 It is highly recommended that each of you have your video turned on during the lectures. Make sure your face is clearly visible with ambient lighting. 
 
 Before each lecture, ensure you have a programming ready device. You should be able to write and execute code during the lecture. Additionally, make sure your device settings allow screen sharing.
@@ -52,3 +66,7 @@ Before each lecture, ensure you have a programming ready device. You should be a
 Consistency is key. Attend all the lectures, sections and office hours (if needed). Make sure you are on time for all of them.
 
 If possible, please try to avoid the use of mobile phones to attend lectures.
+
+
+More info can be found [here](https://canvas.harvard.edu/courses/12626).
+
