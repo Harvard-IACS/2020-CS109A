@@ -36,7 +36,7 @@ CS 109a, AC 209a, Stat 121a, or CSCI E-109a
 
 [Pavlos Protopapas](mailto:pavlos@seas.harvard.edu) (SEAS), [Kevin Rader](mailto:rader@stat.harvard.edu) (Statistics), & [Chris Tanner](mailto:christanner@seas.harvard.edu) (SEAS)
 
-**Lab Instructor:** Eleni Kaxiras (SEAS) 
+**Instructor:** Eleni Kaxiras (SEAS) 
 
 **Lectures:** Mon, Wed, Fri at 9am-10:15am and 3pm-4:15pm (tentative)
 
