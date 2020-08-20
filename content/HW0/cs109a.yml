@@ -1,0 +1,42 @@
+name: cs109a
+
+channels:
+- conda-forge
+- anaconda-fusion
+# for json
+- jmcmurray
+- defaults
+
+dependencies:
+- arviz
+- beautifulsoup4
+- dash
+- gensim
+- holoviews
+- ipytest
+- IPython
+- ipywidgets
+- json
+- jupyter
+- jupyterlab
+- matplotlib
+- mkl-service
+- nltk
+- numpy
+- pandas
+- pillow
+- pip
+- plotly
+- python>=3.6
+- requests
+- scipy
+- scikit-image
+- scikit-learn
+- seaborn
+- spacy
+- statsmodels
+- tensorflow>=2.0.0
+
+- pip:
+    - gap-stat
+    - progressbar2
