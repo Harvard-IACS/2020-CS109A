@@ -117,9 +117,9 @@ There will be 9 graded homework assignments. Some of them will be due one week a
 
 You will be working in Jupyter Notebooks, which you can run in your own environment or in the SEAS JupyterHub cloud.
 
-[Instructions for Setting up Your Environment](https://canvas.harvard.edu/courses/61942/modules/items/562895 "Instructions for Setting up Your Environment")
+[Instructions for Setting up Your Environment](https://canvas.harvard.edu/courses/74056/modules/items/728538 "Instructions for Setting up Your Environment")
 
-[Instructions for Using JupyterHub](https://canvas.harvard.edu/courses/61942/modules/items/562896" "Instructions for Using JupyterHub")
+[Instructions for Using JupyterHub](https://canvas.harvard.edu/courses/74056/modules/items/728539 "Instructions for Using JupyterHub")
 
 On weeks with new assignments, the assignments will be released by Wednesday 3pm.
 
