@@ -11,7 +11,7 @@ Fall 2020 <br><br>
 <strong>Shopping Week Office Hours by Appointment:</strong><br>
 Zoom IDs: <br>
 [Pavlos Protopapas](https://harvard.zoom.us/my/pavlosprotopapas) <br> 
-[Kevin Rader]() <br>
+[Kevin Rader](https://harvard.zoom.us/my/kevinrader) <br>
 [Chris Tanner](https://harvard.zoom.us/my/christanner) (password is 'cs109')
 
 <hr>
