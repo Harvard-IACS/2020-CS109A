@@ -1,6 +1,6 @@
 Title: FAQ
 Slug: faq
-Date: 2020-08-18
+Date: 2020-08-25
 
 <style>
 pre {
@@ -27,7 +27,8 @@ pre {
 
 
 # General
-
+- **What lectures may I attend?**
+- Registered students are free to attend any of the lecture times, regardless of which specific time they've registered for (e.g., you may attend 3pm lectures even if registered for 9am).
 -  **Does the individual HW mean I have to submit on my own but can I still work with my HW partner?**
   - Individual CS109A HW means you are supposed to work on your own, without any human intervention, assistance, or input. You are not allowed to work with partner.  You are allowed to use OHs to ask for clarification questions, but we may not be able to answer all of your questions or help with your coding.  You are allowed to use all of your materials from the course up to the HW, look at problem resolution online, and look at libraries documentation.
 - **Do I have access to the video recorded materials if I am not an Extension School student?**
@@ -38,5 +39,10 @@ pre {
 # Auditing
 
 - **Can I audit this course? What are the rules for auditing?**
-  - Yes, you are welcome to audit this course and attend lecture and sections. However, auditors should not submit HWs or participate in projects and should refrain from using any course TF resources that are destined and created for our registered students like Ed, Jupyter Hub, and office hours.
+  - Yes, you are welcome to audit this course. Send an email to cs109a2020@gmail.com to request full Canvas access. All auditors must agree to abide by the following rules:
+  	- All auditors are held to the same standard of academic honesty as our registered students. Please do not share homeworks or solutions with anyone. Violations will be reported to the Harvard Administrative Board.
+  	- Auditors are not permitted to take the course for credit in the future.
+  	- Auditors may not attend lectures or section during the live stream. Students are randomly assigned to small groups for coding exercises and mixing auditors and students in this way is not ideal. We are investigating methods that would allow auditors to join, but this is the current policy.
+  	- Audiors should not submit HWs or participate in projects.
+  	- Auditors should refrain from using any course and TF resources that are designed for our registered students like Ed, Jupyter Hub, and office hours.
 
