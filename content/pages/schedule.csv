@@ -11,7 +11,7 @@ Week,Lecture (Mon),Lecture (Wed),Lecture (Fri),Advanced Section (Wed),Assignment
 10,Lecture 25: Boosting Methods for Regression,Lecture 26: Boosting Methods for Classification,Lecture 27: Case Study 2,Advanced Section 5: Stacking and mixture of experts, 
 11,Lecture 28: Neural Networks 1-Perceptron and MLP,"Lecture 29: Neural Networks 2-  Anatomy of NN, design choices",Lecture 30: Tensorflow2,,R:HW8 - D:HW7
 12,"Lecture 31: Neural Networks 3 -Back Propagation, SGD","Lecture 32: Regularization methods - Weight decay, data augmentation and dropout",Lecture 33:  Full worked example of regression and classification FFNN,Advanced Section 6: Deeper into Solvers, 
-13,Lecture 34: EthiCS,No lectute (Thanksgiving) ,No lectute (Thanksgiving) ,, 
+13,Lecture 34: EthiCS,No lecture (Thanksgiving) ,No lecture (Thanksgiving) ,, 
 14,Lecture 35: Experimental Design and Testing,Lecture 36: Visualization for Model Interpretation; Lime and SHAP,Lab 13: Web Dev for Final Projects,,R:HW9 - D: HW8
 15,,,,Reading Period,
 16,,,,Finals Week,
