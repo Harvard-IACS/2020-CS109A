@@ -90,7 +90,12 @@ Sessions will be accompanied by relevant examples to clarify key concepts and te
 #### Quizzes <a name='in-class-quizzes'></a>
 At the end of each lecture, there will be a short, graded quiz that will cover the pre-class and in-class material; there will be no AC209a content in the quizzes.  The quizzes will be available for 36 hours after posting.
 
-50% of the quizzes will be dropped from your grade.
+25% of the quizzes will be dropped from your grade.
+
+#### Quizzes <a name='in-class-quizzes'></a>
+At the end of each lecture, there will be a short, graded quiz that will cover the pre-class and in-class material; there will be no AC209a content in the quizzes.  The quizzes will be available for 36 hours after posting.
+
+25% of the quizzes will be dropped from your grade.
 
 #### Sections <a name='sections'></a>
 Lectures are supplemented by sections led by teaching fellows. There are two types of sections:
