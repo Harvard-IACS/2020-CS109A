@@ -7,13 +7,6 @@ save_as: index.html
 Fall 2020 <br><br>
 <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas">Pavlos Protopapas</a>,  <a href='https://statistics.fas.harvard.edu/people/kevin-rader'>Kevin A. Rader</a>, and <a href="https://iacs.seas.harvard.edu/people/chris-tanner">Chris Tanner</a></h5>
 
-</br>
-<strong>Shopping Week Office Hours by Appointment:</strong><br>
-Zoom IDs: <br>
-[Pavlos Protopapas](https://harvard.zoom.us/my/pavlosprotopapas) <br> 
-[Kevin Rader](https://harvard.zoom.us/my/kevinrader) <br>
-[Chris Tanner](https://harvard.zoom.us/my/christanner) (password is 'cs109')
-
 <hr>
 
 <style>
