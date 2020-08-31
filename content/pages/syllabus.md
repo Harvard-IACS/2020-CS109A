@@ -1,7 +1,7 @@
 Title: Syllabus 
 Author: Pavlos Protopapas, Kevin Rader, Chris Tanner
 Slug: syllabus
-Date: 2020-08-17
+Date: 2020-08-31
 
 <style>
 pre {
@@ -38,7 +38,7 @@ CS 109a, AC 209a, Stat 121a, or CSCI E-109a
 
 **Instructor:** Eleni Kaxiras (SEAS) 
 
-**Lectures:** Mon, Wed, Fri at 9am-10:15am and 3pm-4:15pm (tentative)
+**Lectures:** Mon, Wed, Fri at 9am-10:15am and 3pm-4:15pm
 
 **Sections:**  Fri 1:30-2:45 pm and Mon 8:30-9:45 pm. 
 
