@@ -71,9 +71,9 @@ Only one of CS 109a, AC 209a, or Stat 121a can be taken for credit. Students who
 <hr>
 
 
-<strong>Lectures: Mon </strong>, <strong>Wed</strong> & <strong>Fri</strong> 9:00‐10:15 am 
+<strong>Lectures: Mon </strong>, <strong>Wed</strong>, & <strong>Fri</strong> 9:00‐10:15 am & 3:00-4:14 pm (identical material in a single day)
 <br/>
-<strong>Sections: TBD </strong>
+<strong>Sections: Mon </strong> 1:30-2:45 pm & <strong>Wed</strong> 8:30-9:45p pm (identical material)
 <br/>
 <strong>Advanced Sections: TBD </strong>
 <br/>
