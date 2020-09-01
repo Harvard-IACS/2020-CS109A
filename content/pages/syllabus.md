@@ -69,7 +69,7 @@ Only one of CS109a, AC209a, or STAT121a can be taken for credit. Students who ha
 <hr>
 
 ### Course Components <a name='course-components'></a>
-The lectures will be live-streamed and can be accessed through the Zoom section on Canvas. 
+<mark>The lectures will be live-streamed and can be accessed through the Zoom section on Canvas. </mark>
 Video recordings of the live stream will be made available within 24 hours after the event, and will be accessible from the Lecture Video section on Canvas.
 
 #### Lectures <a name='lectures'></a>
