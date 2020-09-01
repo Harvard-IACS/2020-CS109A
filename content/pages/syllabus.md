@@ -282,11 +282,18 @@ For more detailed expectations, please refer to the Collaborations section above
 Students needing academic adjustments or accommodations because of a documented disability must present their Faculty Letter from the [Accessible Education Office (AEO)](http://www.aeo.fas.harvard.edu/) and speak with the professor by the end of the second week of the term, (fill in specific date). Failure to do so may result in the Course Head's inability to respond in a timely manner. All discussions will remain confidential, although Faculty are invited to contact AEO to discuss appropriate implementation.
 
 #### Diversity and Inclusion Statement <a name='diversity-and-inclusion-statement'></a>
-Data Science, like many fields of science, has historically only been represented by a small sliver of the population. This is despite some of the early computer scientist pioneers being women (see [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace) and [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper) for two examples). Recent initiatives have attempted to overcome some barriers to entry:  [Made w/ Code](https://www.madewithcode.com/).
+Data Science and Computer Science have historically been representative of only a small sliver of the population. This is despite the contributions of a diverse group of early pioneers - see Ada Lovelace, Dorothy Vaughan, and Grace Hopper for just a few examples.
 
-We want to attempt to discuss diversity in data science from time to time, where appropriate and possible. Please contact us (in person or electronically) or submit anonymous feedback if you have any suggestions to improve the diversity of the course materials. Furthermore, we would like to create a learning environment for our students that supports a diversity of thoughts, perspectives and experiences, and honors your identities (including but not limited to race, gender, class, sexuality, religion, ability, etc.) To help accomplish this:
+As educators, we aim to build a diverse, inclusive, and representative community offering opportunities in data science to those who have been historically marginalized. We will encourage learning that advances ethical data science, exposes bias in the way data science is used, and advances research into fair and responsible data science.
 
-* If you have a name and/or set of pronouns that differ from those that appear in your official Harvard records, please let us know!
-* If you feel like your performance in the class is being impacted by your experiences outside of class, please do not hesitate to come and talk with us. We want to be a resource for you. Remember that you can also submit anonymous feedback (which will lead to me making a general announcement to the class, if necessary, to address your concerns). If you prefer to speak with someone outside of the course, you may find helpful resources at the [Harvard Office of Diversity and Inclusion](https://diversity.college.harvard.edu/).
-* We (like many people) are still learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to us about it. (Again, anonymous feedback is always an option.)
-* As a participant in course discussions, you should also strive to honor your classmates' diversity.
+We need your help to create a learning environment that supports a diversity of thoughts, perspectives, and experiences, and honors your identities (including but not limited to race, gender, class, sexuality, religion, ability, etc.) To help accomplish this:
+
+- If you have a name and/or set of pronouns that differ from those in your official Harvard records, please let us know!
+
+- If you feel like your performance in the class is being impacted by your experiences outside of class, please do not hesitate to come and talk with us. We want to be a resource for you. Remember that you can also submit anonymous feedback (which will lead to us making a general announcement to the class, if necessary, to address your concerns). If you prefer to speak with someone outside of the course, you may find helpful resources at the Harvard Office of Diversity and Inclusion.
+
+- We (like many people) are still learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to us about it.
+
+- As a participant in course discussions, you are expected to respect your classmates’ diverse backgrounds and perspectives.
+
+Our course will discuss diversity, inclusion, and ethics in data science. Please contact us (in person or electronically) or submit anonymous feedback if you have any suggestions for how we can improve.
