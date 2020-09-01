@@ -40,7 +40,7 @@ CS 109a, AC 209a, Stat 121a, or CSCI E-109a
 
 **Lectures:** Mon, Wed, Fri at 9am-10:15am and 3pm-4:15pm
 
-**Sections:**  Fri 1:30-2:45 pm and Mon 8:30-9:45 pm. 
+**Sections:**  Fri 8:30-9:45 pm and Mon 1:30-2:45 pm. 
 
 **Advanced Sections:** Wed at 12pm (tentative)
 
