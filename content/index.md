@@ -40,7 +40,7 @@ pre {
     flex: 3;
   }
 </style>
-<p><strong>Lab Leaders:</strong>  Eleni Kaxiras</p>
+<p><strong>Additional Instructor:</strong>  Eleni Kaxiras</p>
 <hr>
 
 
