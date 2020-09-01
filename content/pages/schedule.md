@@ -7,7 +7,7 @@ Date: 2020-09-01
 |-----|-----|-----|-----|-----|-----|
 |1||Lecture 1: What is Data Science?  General introduction.|Lecture 2: EDA with Pandas||R:HW0|
 |2|No Lecture (Holiday)|Lecture 3: Web Scraping|Lecture 4: Pandas on steroids (sql like)||R:HW1 - D:HW0|
-|3|Lecture 5: kNN Regression and Linear Regression|Lecture 6: Multi and Poly Regression|Lecrture 7:  Modeling knn and Linear R with skleanr| |R:HW2 - D:HW1|
+|3|Lecture 5: kNN Regression and Linear Regression|Lecture 6: Multi and Poly Regression|Lecture 7:  Modeling knn and Linear R with skleanr| |R:HW2 - D:HW1|
 |4|Lecture 8: Basic Statistics for Data Science|Lecture 9: Inference: Bootstrap and CI|Lecture 10:Bootstrap, inference and matplotlib|Advanced Section 1: Linear Algebra and Hypothesis Testing|R:HW3 - D:HW2|
 |5|Lecture 11: Cross-Validation & Model Selection|Lecture 12: Regularization: Ridge & Lasso|Lecture 13: Estimation of regularization parameter;  Hands on|Advanced Section 2: Methods of regularization and their justifications|R:HW4 (individual) - D:HW3|
 |6|Lecture 14:  Visualization for Communication|Lecture 15: Case Study 1|Lecture 16: kNN classification and Logistic Regression I||R: HW5 - D: Milestone 2|
