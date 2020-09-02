@@ -88,14 +88,14 @@ Sessions will help students develop the intuition for the core concepts, provide
 Sessions will be accompanied by relevant examples to clarify key concepts and techniques.
 
 #### Quizzes <a name='in-class-quizzes'></a>
-At the end of each lecture, there will be a short, graded quiz that will cover the pre-class and in-class material; there will be no AC209a content in the quizzes.  The quizzes will be available for 36 hours after posting.
+At the end of each lecture, there will be a short, graded quiz that will cover the pre-class and in-class material; there will be no AC209a content in the quizzes.  The quizzes will be available until the next lecture.
 
 25% of the quizzes will be dropped from your grade.
 
-#### Quizzes <a name='in-class-quizzes'></a>
-At the end of each lecture, there will be a short, graded quiz that will cover the pre-class and in-class material; there will be no AC209a content in the quizzes.  The quizzes will be available for 36 hours after posting.
+#### Exercises <a name='in-class-exercises'></a>
+Lectures will include one or more coding exercises focused on the newly introduced material; there will be no AC209a content in the exercises. The exercises are short enough to be completed during the time allotted in lecture but they will remain available until the beginning of the following lecture to accomodate those who cannot attend in real time.
 
-25% of the quizzes will be dropped from your grade.
+25% of the exercises will be dropped from your grade.
 
 #### Sections <a name='sections'></a>
 Lectures are supplemented by sections led by teaching fellows. There are two types of sections:
@@ -260,8 +260,8 @@ Your final score for the course will be computed using the following weights:
 |--------------------------------|--------------------|
 | Homework 0 | 1%  |
 | Paired Homework (7)            | 42%                |
-| Individual Homework (2)        | 20%               |
-| Quizzes                        | 12%                |
+| Individual Homework (2)        | 20%                |
+| Quizzes & Exercises            | 12%                |
 | Project                        | 25%                |
 | **Total**                      | **100%**           |
 
