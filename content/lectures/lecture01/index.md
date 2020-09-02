@@ -8,3 +8,4 @@ Tags:
 
 ## Slides
 [Slides (PDF)]({attach}slides/Lecture1_Introduction.pdf)
+[Slides (PPTX)]({attach}slides/Lecture1_Introduction.pptx)
