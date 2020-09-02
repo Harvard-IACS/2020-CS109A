@@ -5,7 +5,7 @@ Date: 2020-09-02
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Tue - D:Due Wed)|
 |-----|-----|-----|-----|-----|-----|
-|9/1||Lecture 1: What is Data Science?  General introduction.|Lecture 2: EDA with Pandas||R:HW0|
+|9/1||[Lecture 1: What is Data Science?  General introduction.]({filename}/lectures/lecture01/index.md)|Lecture 2: EDA with Pandas||R:HW0|
 |9/7|No Lecture (Holiday)|Lecture 3: Web Scraping|Lecture 4: Pandas on steroids (sql like)||R:HW1 - D:HW0|
 |9/14|Lecture 5: kNN Regression and Linear Regression|Lecture 6: Multi and Poly Regression|Lecture 7:  Modeling knn and Linear R with skleanr| |R:HW2 - D:HW1|
 |9/21|Lecture 8: Basic Statistics for Data Science|Lecture 9: Inference: Bootstrap and CI|Lecture 10:Bootstrap, inference and matplotlib|Advanced Section 1: Linear Algebra and Hypothesis Testing|R:HW3 - D:HW2|
