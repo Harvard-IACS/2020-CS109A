@@ -37,6 +37,7 @@ dependencies:
 - spacy
 - statsmodels
 - tensorflow>=2.0.0
+- tensorflow-estimator=2.1.0
 
 - pip:
     - gap-stat
