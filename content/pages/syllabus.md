@@ -261,7 +261,8 @@ Your final score for the course will be computed using the following weights:
 | Homework 0 | 1%  |
 | Paired Homework (7)            | 42%                |
 | Individual Homework (2)        | 20%                |
-| Quizzes & Exercises            | 12%                |
+| Quizzes                        | 6%                 |
+| Exercises                      | 6%                 |
 | Project                        | 25%                |
 | **Total**                      | **100%**           |
 
