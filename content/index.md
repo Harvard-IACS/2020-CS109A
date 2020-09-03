@@ -63,7 +63,13 @@ pre {
 
 Only one of CS 109a, AC 209a, or Stat 121a can be taken for credit. Students who have previously taken CS 109, AC 209, or Stat 121 cannot take CS 109a, AC 209a, or Stat 121a for credit.
 
-
+<br><pre>Important Dates:
+Tuesday 9/8 - HW1 released
+Wednesday 9/9 - HW0 due at 11:59pm EST
+Thursday 9/10 - 'Study Break' at 8:30pm EST
+Friday 9/11 - 'Study Break' at 10:15am EST
+Friday 9/11 - Sections start (1:30pm EST) See syllabus/calendar for weekly times
+</pre>
 <hr>
 <span style="color: #993300;"><strong>Helpline:</strong></span> <a href="mailto:cs109a2020@gmail.com">cs109a2020@gmail.com</a>
 <br/>
