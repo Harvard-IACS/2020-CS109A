@@ -3,7 +3,7 @@ Slug: schedule
 Date: 2020-09-04
 
 
-|Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Tue - D:Due Wed)|
+|Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
 |-----|-----|-----|-----|-----|-----|
 |9/1||[Lecture 1: What is Data Science?  General introduction.]({filename}/lectures/lecture01/index.md)|[Lecture 2: Data + RegEx]({filename}/lectures/lecture02/index.md)||R:HW0|
 |9/7|No Lecture (Holiday)|Lecture 3: Web Scraping + PANDAS|Lecture 4: Advanced PANDAS||R:HW1 - D:HW0|
