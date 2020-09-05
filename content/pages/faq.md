@@ -46,3 +46,8 @@ pre {
   	- Audiors should not submit HWs or participate in projects.
   	- Auditors should refrain from using any course and TF resources that are designed for our registered students like Ed, Jupyter Hub, and office hours.
 
+# Quizzes & Exercises
+- **When are quizzes and exercises due?**
+	- Quizzes and exercises are due before the next **9am** lecture.
+- **I missed a quiz/exercise. Can I make it up?**
+	- No. We will drop your lowest 25% of quizzes and your lowest 25% of exercises. This policy is to reduce stress and is in place so that missing a quiz or exercise on occasion should not affect your final grade.
