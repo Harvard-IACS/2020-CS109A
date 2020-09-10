@@ -1,0 +1,1 @@
+award_node.select_one('h3').text[-4:]
