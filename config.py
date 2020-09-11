@@ -86,8 +86,11 @@ MARKUP = ['md', 'ipynb']
 PLUGIN_PATHS = ['plugins']
 
 # FOR PAVLOS COMPUTER ..... 
-#PLUGINS = ['ipynb.markup', 'tipue_search']
 PLUGINS = ['tipue_search']
+
+#from pelican_jupyter import markup as nb_markup
+#PLUGINS = ['ipynb.markup', 'tipue_search']
+#PLUGINS = [nb_markup, 'ipynb.markup', 'tipue_search']
 
 IGNORE_FILES = ['.#*', '.ipynb_checkpoints', 'README.md', "*.html", "__pycache__", "*.pdf", "*.pptx", ".placeholder", ".DS_Store", "*.ipynb-meta", "*.csv", "*.json", "*.txt", "*.xmls"]
 
