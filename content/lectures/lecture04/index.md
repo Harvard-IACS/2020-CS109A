@@ -1,11 +1,11 @@
-Title: Lecture 2: Data
+Title: Lecture 4: Data
 Category: lectures
-Date: 2020-09-09
+Date: 2020-09-11
 Author: Chris Tanner
-Slug: lecture03
-Tags: requests, web scraping, pandas, beautiful soup, parsing, eda
+Slug: lecture04
+Tags: eda, pandas
 
 
 ## Slides
-[Slides (PDF)]({attach}slides/Lecture03_Data_II.pdf)
-[Slides (PPTX)]({attach}slides/Lecture03_Data_II.pptx)
+[Slides (PDF)]({attach}slides/Lecture04_EDA_and_PANDAS.pdf)
+[Slides (PPTX)]({attach}slides/Lecture04_EDA_and_PANDAS.pptx)
