@@ -1,4 +1,4 @@
-Title: Lecture 2: Data
+Title: Lecture 2: Data + RegEx
 Category: lectures
 Date: 2020-09-04
 Author: Chris Tanner

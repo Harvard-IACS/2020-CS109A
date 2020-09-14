@@ -1,4 +1,4 @@
-Title: Lecture 4: Data
+Title: Lecture 4: Advanced PANDAS
 Category: lectures
 Date: 2020-09-11
 Author: Chris Tanner

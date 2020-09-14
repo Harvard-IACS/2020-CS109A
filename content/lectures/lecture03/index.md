@@ -1,4 +1,4 @@
-Title: Lecture 2: Data
+Title: Lecture 3: Web Scraping + PANDAS
 Category: lectures
 Date: 2020-09-09
 Author: Chris Tanner
