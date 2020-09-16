@@ -34,7 +34,9 @@ pre {
 - **Do I have access to the video recorded materials if I am not an Extension School student?**
   - Yes. All CS109A students have access to all video captured materials. If you have any issues accessing the video content, please send an email to our helpline with your name and HUID.
 - **Can I make-up quizzes?**
-  - No. Only your top 50% of quiz grades will count towards your final grade. This policy is to reduce stress and is in place so that missing a quiz on occasion should not affect your final grade.
+  - No. Only your top 25% of quiz grades will count towards your final grade. This policy is to reduce stress and is in place so that missing a quiz on occasion should not affect your final grade.
+- **Where should I send my questions?**
+  - Use Ed for anying related to the course content or assignments. All other concerns should be sent to the course helpline: cs109a2020@gmail.com
 
 # Auditing
 
