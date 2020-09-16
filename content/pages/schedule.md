@@ -7,7 +7,7 @@ Date: 2020-09-16
 |-----|-----|-----|-----|-----|-----|
 |9/1||[Lecture 1: What is Data Science?  General introduction.]({filename}/lectures/lecture01/index.md)|[Lecture 2: Data + RegEx]({filename}/lectures/lecture02/index.md)||R:HW0|
 |9/7|No Lecture (Holiday)|[Lecture 3: Web Scraping + PANDAS]({filename}/lectures/lecture03/index.md)|[Lecture 4: Advanced PANDAS]({filename}/lectures/lecture04/index.md)||R:HW1 - D:HW0|
-|9/14|[Lecture 5: kNN Regression and Linear Regression]({filename}/lectures/lecture05/index.md)|Lecture 6: Multi and Poly Regression|Lecture 7:  Modeling knn and Linear R with skleanr| |R:HW2 - D:HW1|
+|9/14|[Lecture 5: kNN Regression and Linear Regression]({filename}/lectures/lecture05/index.md)|[Lecture 6: Multi and Poly Regression]({filename}/lectures/lecture06/index.md)|Lecture 7:  Modeling knn and Linear R with skleanr| |R:HW2 - D:HW1|
 |9/21|Lecture 8: Basic Statistics for Data Science|Lecture 9: Inference: Bootstrap and CI|Lecture 10:Bootstrap, inference and matplotlib|Advanced Section 1: Linear Algebra and Hypothesis Testing|R:HW3 - D:HW2|
 |9/28|Lecture 11: Cross-Validation & Model Selection|Lecture 12: Regularization: Ridge & Lasso|Lecture 13: Estimation of regularization parameter;  Hands on|Advanced Section 2: Methods of regularization and their justifications|R:HW4 (individual) - D:HW3|
 |10/5|Lecture 14:  Visualization for Communication|Lecture 15: Case Study 1|Lecture 16: kNN classification and Logistic Regression I||R: HW5 - D: Milestone 2|
