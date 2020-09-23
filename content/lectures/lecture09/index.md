@@ -9,7 +9,7 @@ Tags: inference, bootstrap
 
 [Into to Inference [PDF]]({attach}slides/Lecture9_IntroInference.pdf)
 
-[Intro to Inference [PPTX]]({attach}slides/Lecture9_introInference.pptx)
+[Intro to Inference [PPTX]]({attach}slides/Lecture9_IntroInference.pptx)
 
 [Inference & Bootstrap [PDF]]({attach}slides/Lecture9_Inference_Bootstrap.pdf)
 
