@@ -46,8 +46,17 @@ pre {
   	- Audiors should not submit HWs or participate in projects.
   	- Auditors should refrain from using any course and TF resources that are designed for our registered students like Ed, Jupyter Hub, and office hours.
 
+# Projects
+- **Can I do a custom final project?**
+	- The teaching staff may approve a custom project if:
+		- You have a group of at least 3 students interested in working on the project
+		- You have a clear problem statement outlined in a project proposal for approval by the professors
+		- You have access to the required data
+		- The data is not private and can be shared with members of the teaching staff who will be guiding and evaluating the project
+
 # Quizzes & Exercises
 - **When are quizzes and exercises due?**
 	- Quizzes and exercises are due before the next **9am** lecture.
 - **I missed a quiz/exercise. Can I make it up?**
 	- No. We will drop your lowest 25% of quizzes and your lowest 25% of exercises. This policy is to reduce stress and is in place so that missing a quiz or exercise on occasion should not affect your final grade.
+
