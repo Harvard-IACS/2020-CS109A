@@ -1,4 +1,4 @@
-Title: Lecture 13: Thinking critically about data, models, and code
+Title: Lecture 13: Thinking critically about models, data, and debugging
 Category: lectures
 Date: 2020-10-02
 Author: Chris Tanner
@@ -7,5 +7,5 @@ Tags: models, parametric, nonparametric, debugging, training data, testing data
 
 
 ## Slides
-- [Data, Models, and Code [PDF]]({attach}slides/Lecture13_Data_Models_Debugging.pdf)
-- [Data, Models, and Code [PPTX]]({attach}slides/Lecture13_Data_Models_Debugging.pptx)
+- [Models, Data, and Debugging [PDF]]({attach}slides/Lecture13_Models_Data_Debugging.pdf)
+- [Models, Data, and Debugging [PPTX]]({attach}slides/Lecture13_Models_Data_Debugging.pptx)
