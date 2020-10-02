@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-09-30
+Date: 2020-10-01
 
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
