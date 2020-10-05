@@ -6,5 +6,5 @@ Slug: lecture14
 Tags: visualization, plotting, graphing, matplotlib, design
 
 ## Slides
-- [Visualization [PDF]]({attach}slides/Lecture14_Visualization.pdf.pdf)
-- [Visualization[PPTX]]({attach}slides/Lecture14_Visualization.pdf.pptx)
+- [Visualization [PDF]]({attach}slides/Lecture14_Visualization_Part_1.pdf)
+- [Visualization[PPTX]]({attach}slides/Lecture14_Visualization.pptx)
