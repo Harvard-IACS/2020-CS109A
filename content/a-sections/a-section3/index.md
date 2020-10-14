@@ -9,4 +9,7 @@ Tags: Generalized Linear Models
 
 - [A-Section 3: Generalized Linear Models (Slides) [PPTX]]({attach}Asec3_2020_slides_GLM.pptx)
 - [A-Section 3: Generalized Linear Models (Slides) [PDF]]({attach}Asec3_2020_slides_GLM.pdf)
+
+## Notes
+
 - [A-Section 3: Generalized Linear Models (Notes) [PDF]]({attach}Asec3_2020_notes_GLM.pdf)
