@@ -1,4 +1,4 @@
-Title: Advanced Section 01: Linear Algebra and Hypothesis Testing
+Title: Advanced Section 1: Linear Algebra and Hypothesis Testing
 Category: a-sections
 Slug: a-section1
 Author: Cecilia Garraffo 

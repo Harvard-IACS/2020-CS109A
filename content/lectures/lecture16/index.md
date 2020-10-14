@@ -1,10 +1,10 @@
-Title: Lecture 15:  kNN classification and Logistic Regression I
+Title: Lecture 16:  Case Study
 Category: lectures
-Date: 2020-10-07
+Date: 2020-10-10
 Author: Kevin Rader
-Slug: lecture15
-Tags: Logistic Regression, Classification, kNN
+Slug: lecture16
+Tags: 
 
 ## Slides
-- [Logistic Regression [PDF]]({attach}slides/Lecture15_LogisticRegression.pdf)
-- [Logistic Regression [PPTX]]({attach}slides/Lecture15_LogisticRegression.pptx)
+- [Case Study [PDF]]({attach}slides/Lecture16_Review_and_a_Preview.pdf)
+- [Case Study [PPTX]]({attach}slides/Lecture16_Review_and_a_Preview.pptx)
