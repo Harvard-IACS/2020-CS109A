@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-10-15
+Date: 2020-10-19
 
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
@@ -11,7 +11,7 @@ Date: 2020-10-15
 |9/21|[Lecture 8: Basic Statistics for Data Science]({filename}/lectures/lecture08/index.md)|[Lecture 9: Inference: Bootstrap and CI]({filename}/lectures/lecture09/index.md)|[Lecture 10: Hypothesis Testing & Predictive CI]({filename}/lectures/lecture10/index.md)|[Advanced Section 1: Linear Algebra and Hypothesis Testing]({filename}/a-sections/a-section1/index.md)|R:HW3 - D:HW2|
 |9/28|[Lecture 11: Cross-Validation & Model Selection]({filename}/lectures/lecture11/index.md)|[Lecture 12: Regularization: Ridge & Lasso]({filename}/lectures/lecture12/index.md)|[Lecture 13: Estimation of regularization parameter;  Hands on]({filename}/lectures/lecture13/index.md)|[Advanced Section 2: Methods of regularization and their justifications]({filename}/a-sections/a-section2/index.md)| Milestone 1|
 |10/5|[Lecture 14:  Visualization for Communication]({filename}/lectures/lecture14/index.md)|[Lecture 15: kNN classification and Logistic Regression I]({filename}/lectures/lecture15/index.md)|[Lecture 16: Case Study 1]({filename}/lectures/lecture16/index.md)||R: HW4 (Individual) - D: HW3|
-|10/12|No Lecture (Holiday)|[Lecture 17: Logistic Regression II]({filename}/lectures/lecture17/index.md)|Lecture 18: Multi class Classification (introduce softmax)|[Advanced Section 3: Generalized Linear Models]({filename}/a-sections/a-section3/index.md)| Milestone 2|
+|10/12|No Lecture (Holiday)|[Lecture 17: Logistic Regression II]({filename}/lectures/lecture17/index.md)|[Lecture 18: Multi class Classification (introduce softmax)]({filename}/lectures/lecture18/index.md)|[Advanced Section 3: Generalized Linear Models]({filename}/a-sections/a-section3/index.md)| Milestone 2|
 |10/19|Lecture 19:  Dealing with missing data, imputation|Lecture 20: PCA|Lecture 21: PCA and missing with data; hands on|Advanced Section 4:Mathematical Foundations of PCA|R:HW5 - D:HW4|
 |10/26|Lecture 22: Classification Trees|Lecture 23: Regression Trees Bagging RF|Lecture 22: Tuning hyperparameters| |R:HW6 -  D:HW5|
 |11/2|Lecture 25: Boosting Methods for Regression|Lecture 26: Boosting Methods for Classification|Lecture 27: Case Study 2|Advanced Section 5: Stacking and mixture of experts| |
