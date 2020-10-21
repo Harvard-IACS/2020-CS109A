@@ -1,4 +1,4 @@
-Title: Advanced Section 4: PCA 
+Title: Advanced Section 4: Mathematical Foundations  of PCA 
 Category: a-sections
 Slug: a-section4
 Author: David Sondak
