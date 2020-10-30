@@ -7,4 +7,4 @@ Tags: Decision Trees, Bagging, Random Forest
 
 ## Jupyter Notebooks
 
-- [S-Section 7: Bagging and Random Forest]({static}notebook/cs109a_section_7.ipynb)
+- [S-Section 7: Bagging and Random Forest]({filename}notebook/cs109a_section_7.ipynb)
