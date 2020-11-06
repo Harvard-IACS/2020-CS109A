@@ -114,6 +114,11 @@ Are there certain attributes of bourbons that are predictive of good (i.e., high
 
 ** Goal: predict customer reviews
 ** Data: train/dev/test splits
+
+************
+==---> QUESTION FOR CLASS: which features should we use? could we use?
+************
+
 ** Features:
 	- all 14 flavors
 	- age
@@ -126,9 +131,49 @@ Are there certain attributes of bourbons that are predictive of good (i.e., high
 ----------------------------
 MODEL #1: LINEAR REGRESSION
 ----------------------------
+
+************
+==--->  QUESTION FOR CLASS: should we scale our data for linear regression?
+************
+
 ** Model choices:
 	- scale data: no
-	- 
+	- polynomial features: no
 
-** Performance: ????
-** Insights: residuals ... ????
+** Performance: 0.064 MSE
+** Insights:
+	- residentual histogram looks good (normal distribution)
+	- feature importance
+
+
+- Bootstrap:
+- # of features
+- Cross-validation
+	all features:
+	- Linear Regression
+
+************
+==--->  QUESTION FOR CLASS: how do we know if we're suffering from not having enough data?
+************
+
+----------------------------
+MODEL #2: kNN (non-parametric)
+----------------------------
+************
+==--->  QUESTION FOR CLASS: why would we want to try kNN? what could be advantages and disadvantages over linear regression? ANS: don't have to worry about predicting values > 5. could be sensitive for rarer ones and not useful for whiskeys with common attributes (e.g., always predicting a mean, even if one or two values would be big indicators).
+
+
+************
+
+	- kNN (varying k) -- 5 k's
+************
+==--->  QUESTION FOR CLASS: what should we try next? Logistic regression or Decision Trees?
+************
+
+----------------------------
+MODEL #2: Decision Trees
+----------------------------
+	- DecisionTree (varying 2 params?)
+	- Bagging (varying 2 params?)
+	- RandomForest (varying 2 params?)
+
