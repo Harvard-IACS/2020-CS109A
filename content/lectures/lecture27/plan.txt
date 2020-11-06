@@ -1,0 +1,134 @@
+--------------------------------
+1. PROBLEM OVERVIEW
+--------------------------------
+Well-defined questions:
+
+1. Are there certain attributes of bourbons that are predictive of good (i.e., highly rated by customers) bourbons?
+	1a. Find hidden gems (i.e., should be good but current reviews are absent or unsupportive of such)
+	1b. Find over-hyped whiskeys (i.e., the reviews seem high but the attributes aren't indicative)
+	1c. Are there significant results if we target experts' ratings instead of average customer ratings?
+
+2. Are there certain attributes of bourbons that are predictive of expensive bourbons?
+	2a. Find under-priced whiskeys
+	2b. Find over-priced whiskeys
+
+3. Which bourbons are more similar to each other?
+	3a. Which attributes are important for determining similarness? (e.g., does price play a role?)
+
+
+--------------------------------
+2. OBTAINING DATA
+--------------------------------
+distiller.com has a lot of data and pertinent flavor profiles
+
+1. How much data? 2,139 on the site
+2. Can i get it? 2,205 (because iPad user-agent)
+
+
+--------------------------------
+3. DATA SANITY CHECK / CLEANING
+--------------------------------
+
+*** QUESTION: how do i calculate the collinearity (VIF) b/w different features?
+
+- filter by those reviewed by an expert: 710
+- further filter by those that are bourbons: 586
+- how many distinct flavor summaries? 71, but about 20 capture most of them
+- how many rare ones? 119 of 586
+
+- how many distinct expert reviewers? 31, but about 15 capture most of them
+- what's the summary statistics? .describe() we see that:
+- most flavors have a max of 100 but tart and peaty only have a max of 75 and 40, respectively.
+- prices are perfectly distributed
+- # ratings seem heavily skewed, whereby a few have TONS of reviews
+
+How many unique 'experts' (i.e., authors) are there?
+	- 31, but about 15 capture most of them
+
+Any missing values?
+	- Customer Rating missing for "Tacoma New West Bourbon" (removed it)
+	- Age missing for 379 whiskeys (out of 585), meaning we have 206 (left them all in, cleaned them up)
+
+What are the 'Badge' values (I saw 'rare' while crawling).
+	- How many are rare? 119
+	- Does it make sense to have that many rare ones? Yes, seems reasonable, as only a few are super common in real life, and there's a long tail of one-off state-local ones.
+	- changed 'Badge' column to 'Rare' with TRUE or FALSE values
+
+Fixed data types:
+	- 'ABV %' should be a float64;
+	- 'Expert score' an int32
+	- 'Age' should be a float64
+
+
+--------------------------------
+4. EDA
+--------------------------------
+
+Any outliers? look at:
+	- smoky (beyond 30)
+	- peaty (beyond 0)
+	- spicy (less than 40)
+	- herbal (beyond 40)
+	- oily (beyond 45)
+	- full-bodied (less than or equal to 20)
+	- briny (beyond 10)
+	- salty (10 and beyond)
+	- tart (beyond 50)
+	- fruity (80 and beyond)
+	- what's the oldest?
+	- most popular? (most # of reviews)
+	- highest/lowest rated (by customers)
+	- highest/lowest rated (by experts)
+	- most/least expensive
+	- distribution of locations: some distilleries make many different bourbons, but then it falls off, and each distillery may make just a few different versions.
+
+What's the distribution of all flavor values? (to ensure they are meaningful)
+	- make a histogram for each of the 14 flavors
+
+How does popularity correlate with customer's ratings.
+How does popularity correlate with experts' scores.
+How does popularity correlate with price.
+How does price correlate with experts' scores
+	- make a scatter matrix of all.
+
+Do the correlations that exist make sense?
+	- Yes
+
+Are there any correlations that we expected to see but didn't observe?
+	- No
+
+
+--------------------------------
+5. PROBLEMS
+--------------------------------
+
+##################
+##  PROBLEM #1  ##
+##################
+
+Are there certain attributes of bourbons that are predictive of good (i.e., highly rated by customers) bourbons?
+	1a. Find hidden gems (i.e., should be good but current reviews are absent or unsupportive of such)
+	1b. Find over-hyped whiskeys (i.e., the reviews seem high but the attributes aren't indicative)
+	1c. Are there significant results if we target experts' ratings instead of average customer ratings?
+
+
+** Goal: predict customer reviews
+** Data: train/dev/test splits
+** Features:
+	- all 14 flavors
+	- age
+	- abv %
+	- price
+	- badge
+	- expert score
+** Accuracy metric: MSE
+
+----------------------------
+MODEL #1: LINEAR REGRESSION
+----------------------------
+** Model choices:
+	- scale data: no
+	- 
+
+** Performance: ????
+** Insights: residuals ... ????
