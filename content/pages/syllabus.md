@@ -49,7 +49,9 @@ CS 109a, AC 209a, Stat 121a, or CSCI E-109a
 **Format:** Exclusively online, but we aim to foster enriching interactions and collaboration as much as possible.
 
 **Prerequisites:** You are expected to have programming experience at the level of CS 50 or above, and statistics knowledge at the level of Stat 100 or above (Stat 110 recommended). HW #0 is designed to test your knowledge on the prerequisites. Successful completion of this assignment will show that this course is suitable for you. HW #0 will not be graded but you are required to submit.
-<hr>
+
+---
+
 Welcome to CS109a/STAT121a/AC209a, also offered by the DCE as CSCI E-109a, Introduction to Data Science. This course is the first half of a one‐year course in data science. The course focuses on the analysis of messy, real-life data to perform predictions using statistical and machine learning methods.
 
 Throughout the semester, our content continuously centers around five key facets:
@@ -66,7 +68,7 @@ Throughout the semester, our content continuously centers around five key facets
 
 Only one of CS109a, AC209a, or STAT121a can be taken for credit. Students who have previously taken CS109, AC209, or STAT121 cannot take CS109A, AC 209A, or STAT121A for credit.
 
-<hr>
+---
 
 ### Course Components <a name='course-components'></a>
 <mark>The lectures will be live-streamed and can be accessed through the Zoom section on Canvas. </mark>
@@ -153,7 +155,7 @@ Students are expected to be actively engaged with the course. This includes:
 
 Despite being remote, we aim to make this course as interactive, stimulating, and fun as always, and we rely on each of you to contribute your awesome uniqueness.
 
-<hr>
+---
 
 ### Recommended Textbook
 
@@ -172,8 +174,7 @@ The book is available here:
 **Deep Learning** by Ian Goodfellow and Yoshua Bengio and Aaron Courville (MIT Press, 2016)  
 
 
-<hr>
-
+---
 ### Course Policies
 
 
