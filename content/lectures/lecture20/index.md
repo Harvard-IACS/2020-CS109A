@@ -1,10 +1,10 @@
-Title: Lecture 20:
+Title: Lecture 20: PCA
 Category: lectures
-Date: 2020-06-05
-Author: 
+Date: 2020-10-21
+Author: Kevin Rader
 Slug: lecture20
-Tags: ADD TAGS HERE
+Tags: PCA
 
 
 ## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+- [PDF | Lecture 20: PCA]({attach}slides/Lecture20_pca.pdf)

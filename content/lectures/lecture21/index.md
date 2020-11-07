@@ -1,10 +1,8 @@
-Title: Lecture 21:
+Title: Lecture 21: PCA & Missing Data
 Category: lectures
-Date: 2020-06-05
-Author: 
+Date: 2020-10-23
+Author: Kevin Rader
 Slug: lecture21
-Tags: ADD TAGS HERE
+Tags: 
 
-
-## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+See lecture 20 slides

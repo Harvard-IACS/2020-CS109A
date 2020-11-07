@@ -1,10 +1,10 @@
-Title: Lecture 22:
+Title: Lecture 22: Classification Trees
 Category: lectures
-Date: 2020-06-05
-Author: 
+Date: 2020-10-21
+Author: Kevin Rader
 Slug: lecture22
-Tags: ADD TAGS HERE
+Tags: Decision Trees, Classification
 
 
 ## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+- [PDF | Lecture 22: Classification Trees]({attach}slides/Lecture22_decision_trees.pdf)
