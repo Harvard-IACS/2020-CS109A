@@ -169,7 +169,7 @@ The book is available here:
 
 **Amazon:** [https://www.amazon.com/Introduction-Statistical-Learning-Applications-Statistics/dp/1461471370 (Links to an external site)](https://www.amazon.com/Introduction-Statistical-Learning-Applications-Statistics/dp/1461471370).
 
-**Deep Learning, Vol. 1: From Basics to Practice** by Andrew Glassner
+**Deep Learning, Vol. 1 & 2: From Basics to Practice** by Andrew Glassner
 
 **Deep Learning** by Ian Goodfellow and Yoshua Bengio and Aaron Courville (MIT Press, 2016)  
 
