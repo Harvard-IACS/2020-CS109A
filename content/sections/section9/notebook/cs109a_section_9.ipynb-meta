@@ -1,0 +1,6 @@
+Title: S-Section 09: Feed forward neural networks
+Category: sections
+Slug: sec_9
+Author:  Marios Mattheakis, Henry Jin, Hayden Joy
+Date: 2020-11-13
+Tags: neural networks, feed forward, tensorflow, keras, training, batching, stochastic gradient descent
