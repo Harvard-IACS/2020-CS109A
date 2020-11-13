@@ -7,4 +7,4 @@ Tags: neural networks, feed forward, tensorflow, keras, training, batching, stoc
 
 ## Jupyter Notebooks
 
-- [S-Section 9: Feed forward neural networks]({filename}notebook/cs109a_section_9.ipynb)
+- [S-Section 9: Feed forward neural networks]({static}notebook/cs109a_section_9.ipynb)
