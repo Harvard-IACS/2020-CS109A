@@ -11,5 +11,3 @@ Tags: Neural Networks, Gradient Descent
 - [PPTX | Lecture 30: Design Layers]({attach}slides/Lecture30_A_NN_Design_Layers.pptx)
 - [PDF | Lecture 30: Gradient Descent]({attach}slides/Lecture30_GradientDescent.pdf)
 - [PPTX | Lecture 30: Gradient Descent]({attach}slides/Lecture30_GradientDescent.pptx)
-- [PDF | Lecture 30: Stochastic Gradient Descent]({attach}slides/Lecture30_B_NN_SGD.pdf)
-- [PPTX | Lecture 30: Stochastic Gradient Descent]({attach}slides/Lecture30_B_NN_SGD.pptx)
