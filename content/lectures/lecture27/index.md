@@ -1,10 +1,11 @@
-Title: Lecture 27:
+Title: Lecture 27: Case Study 2
 Category: lectures
-Date: 2020-06-05
-Author: 
+Date: 2020-11-26
+Author: Chris Tanner
 Slug: lecture27
-Tags: ADD TAGS HERE
+Tags: Case Study
 
 
 ## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+- [PDF | Lecture 27: Case Study 2]({attach}slides/Lecture27_Case_Study.pdf)
+- [PPTX | Lecture 27: Case Study 2]({attach}slides/Lecture27_Case_Study.pptx)

@@ -1,10 +1,10 @@
 Title: Lecture 19:
 Category: lectures
-Date: 2020-06-05
-Author: 
+Date: 2020-10-19
+Author: Kevin Rader
 Slug: lecture19
-Tags: ADD TAGS HERE
+Tags: Missing Data, Imputation
 
 
 ## Slides
-<!-- - [PDF | Lecture 1: Description]({attach}presentation/Lecture1_Data.pdf) -->
+- [PDF | Lecture 19: Missing Data]({attach}slides/Lecture19_Missingdata.pdf)

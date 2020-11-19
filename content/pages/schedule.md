@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-11-18
+Date: 2020-11-19
 
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
@@ -16,7 +16,7 @@ Date: 2020-11-18
 |10/26|[Lecture 22: Classification Trees]({filename}/lectures/lecture22/index.md)|[Lecture 23: Regression Trees Bagging RF]({filename}/lectures/lecture23/index.md)|[Lecture 24: Tuning hyperparameters]({filename}/lectures/lecture24/index.md)| |R:HW6 -  D:HW5|
 |11/2|[Lecture 25: Boosting Methods for Regression]({filename}/lectures/lecture25/index.md)|[Lecture 26: Boosting Methods for Classification]({filename}/lectures/lecture26/index.md)|[Lecture 27: Case Study 2]({filename}/lectures/lecture27/index.md)|[Advanced Section 5: Stacking and mixture of experts]({filename}/a-sections/a-section5/index.md)| |
 |11/9|[Lecture 28: Neural Networks 1-Perceptron and MLP]({filename}/lectures/lecture28/index.md)|[Lecture 29: Neural Networks 2-  Anatomy of NN, design choices]({filename}/lectures/lecture29/index.md)|[Lecture 30: Neural Netoworks 3- Design Choices II & Gradient Descent]({filename}/lectures/lecture30/index.md)||R:HW7 (Individual) - D:HW6|
-|11/16|[Lecture 31: Neural Networks 4 -Back Propagation, SGD]({filename}/lectures/lecture31/index.md)|[Lecture 32: Regularization methods - Weight decay, data augmentation and dropout]({filename}/lectures/lecture32/index.md)|Lecture 33:  Full worked example of regression and classification FFNN|Advanced Section 6: Deeper into Solvers| Milestone 3|
+|11/16|[Lecture 31: Neural Networks 4 -Back Propagation, SGD]({filename}/lectures/lecture31/index.md)|[Lecture 32: Regularization methods - Weight decay, data augmentation and dropout]({filename}/lectures/lecture32/index.md)|Lecture 33:  Full worked example of regression and classification FFNN|[Advanced Section 6: Deeper into Solvers]({filename}/a-sections/a-section6/index.md)| Milestone 3|
 |11/23|Lecture 34: EthiCS|No lecture (Thanksgiving) |No lecture (Thanksgiving) || R:HW8 - D:HW7 |
 |11/30|Lecture 35: Experimental Design and Testing|Lecture 36: Visualization for Model Interpretation; Lime and SHAP|Lab 13: Web Dev for Final Projects||D: HW8|
 |12/7||||Reading Period||
