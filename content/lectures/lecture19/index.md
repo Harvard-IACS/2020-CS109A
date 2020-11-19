@@ -1,4 +1,4 @@
-Title: Lecture 19:
+Title: Lecture 19: Missing Data
 Category: lectures
 Date: 2020-10-19
 Author: Kevin Rader
