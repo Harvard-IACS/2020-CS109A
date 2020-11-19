@@ -1,6 +1,6 @@
 Title: Lecture 27: Case Study 2
 Category: lectures
-Date: 2020-11-26
+Date: 2020-11-06
 Author: Chris Tanner
 Slug: lecture27
 Tags: Case Study
