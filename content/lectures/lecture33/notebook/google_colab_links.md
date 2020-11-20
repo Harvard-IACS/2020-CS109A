@@ -4,4 +4,4 @@ https://colab.research.google.com/drive/16MqFE1vIrX4OdOgV8A9GpMmIuBmlSAqR?usp=sh
 
 Public Link to kanye_shoe.jpg, a photo of a very important shoe
 
-https://drive.google.com/file/d/1r1pMIRHp36qUY_neNPLV5l0o34K-ulY9/view?usp=sharing
+https://github.com/Harvard-IACS/2020-CS109A/blob/master/content/lectures/lecture33/notebook/kanye_shoe.jpg
