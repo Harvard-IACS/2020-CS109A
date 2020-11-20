@@ -1,0 +1,170 @@
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666666;
+  background-color: #f5f5f5;
+}
+
+img {
+  width: 100%;
+}
+
+#content {
+  margin-top: 60px;
+  margin-bottom: 10vh;
+  min-height: 95vh;
+}
+
+.navbar {
+  background-color: #a51c30;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+}
+
+.navbar .navbar-brand {
+  display: flex;
+}
+
+.navbar-brand .navbar-brand-logo {
+  max-width: 40px;
+  align-self: center;
+}
+
+.navbar-brand .course-title {
+  color: #ffffff;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.navbar .navbar-nav.ml-auto {
+  align-items: center;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #ffffff;
+}
+
+.input-group .form-control {
+  border: 0;
+}
+
+.footer {
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 90px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #c90016;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+  background-color: #ddd;
+}
+
+table thead {
+  color: #ffff;
+  background-color: #343a40;
+}
+
+.category-title {
+  text-transform: capitalize;
+}
+
+.category-title--list {
+  text-transform: capitalize;
+  margin-top: 15px;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-list .category-item {
+  margin: 10px 0;
+}
+
+.material-section {
+  margin: 1.5rem 0;
+}
+
+#content .material-section h2 {
+  margin-bottom: 1rem;
+}
+
+#content .material-section h4 {
+  margin: 0.5rem 0;
+}
+#tipue_search_input {
+  width: 100%;
+  background-color: transparent;
+  padding: 0;
+  font-size: xx-large;
+  font-weight: 900;
+  font-family: inherit;
+}
+
+.tipue_search_content_title {
+  font-weight: 600;
+  font-size: x-large;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.tipue_search_content_url {
+  font: inherit;
+}
+
+.tipue_search_content_text {
+  font: inherit;
+}
+
+/* Custom */
+#content.container {
+    max-width: 75rem;
+}
+nav div.container, div.container.title, footer div.container,
+.container.syllabus, .container.materials, .container.modules, .container.resources, .container.index,
+.container.category {
+    max-width: 50rem;
+}
+div.container.title {
+    max-width: 50rem;
+}
+a {
+    color: #c90016;
+;
+}
+
+hr {
+    border-color: #e6e6ff;
+}
+
+#content h1 {
+    font-size: 2rem;
+    color: black;
+}
+#content h2 {
+    font-size: 1.75rem;
+    color: black;
+}
+#content h3 {
+    font-size: 1.5rem;
+    color: black;
+    margin: 2em,0,0.5em;
+}
+#content h4 {
+    font-size: 1.25rem;
+    color: black;
+    margin: 2em 0 0.5em;
+}

@@ -7,4 +7,4 @@ Tags: neural networks, regularization, overfitting, underfitting, Adam, dropout,
 
 ## Jupyter Notebooks
 
-- [S-Section 10: Feed Forward Neural Networks: Regularization and Adam optimizer]({filename}notebook/cs109a_section_10.ipynb)
+- [S-Section 10: Feed Forward Neural Networks: Regularization and Adam optimizer]({static}notebook/cs109a_section_10.ipynb)
