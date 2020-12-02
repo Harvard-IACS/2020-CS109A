@@ -8,4 +8,4 @@ Tags:
 
 ## Slides
 - [PDF | Lecture 36: Wrap-Up Review]({attach}slides/Lecture36_Review.pdf)
-- [PDF | Lecture 36: Wrap-Up Review]({attach}slides/Lecture36_Review.pptx)
+- [PPTX | Lecture 36: Wrap-Up Review]({attach}slides/Lecture36_Review.pptx)
