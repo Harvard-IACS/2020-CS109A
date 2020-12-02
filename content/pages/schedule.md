@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2020-11-30
+Date: 2020-12-02
 
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
@@ -18,6 +18,6 @@ Date: 2020-11-30
 |11/9|[Lecture 28: Neural Networks 1-Perceptron and MLP]({filename}/lectures/lecture28/index.md)|[Lecture 29: Neural Networks 2-  Anatomy of NN, design choices]({filename}/lectures/lecture29/index.md)|[Lecture 30: Neural Netoworks 3- Design Choices II & Gradient Descent]({filename}/lectures/lecture30/index.md)||R:HW7 (Individual) - D:HW6|
 |11/16|[Lecture 31: Neural Networks 4 -Back Propagation, SGD]({filename}/lectures/lecture31/index.md)|[Lecture 32: Regularization methods - Weight decay, data augmentation and dropout]({filename}/lectures/lecture32/index.md)|[Lecture 33:  Full worked example of regression and classification FFNN]({filename}/lectures/lecture33/index.md)|[Advanced Section 6: Deeper into Solvers]({filename}/a-sections/a-section6/index.md)| Milestone 3|
 |11/23|Lecture 34: EthiCS|No lecture (Thanksgiving) |No lecture (Thanksgiving) || R:HW8 - D:HW7 |
-|11/30|[Lecture 35: Interpreting Prediction Models]({filename}/lectures/lecture35/index.md)|Lecture 36: Wrap-Up|Lab 13: Web Dev for Final Projects||D: HW8|
+|11/30|[Lecture 35: Interpreting Prediction Models]({filename}/lectures/lecture35/index.md)|Lecture 36: Wrap-Up|||D: HW8|
 |12/7||||Reading Period||
 |12/14||||Finals Week||
