@@ -11,3 +11,6 @@ Tags: Neural Networks
 - [PPTX | Lecture 29: Anatomy of NN]({attach}slides/Session29-NN.pptx)
 - [PDF | Lecture 29: Design Layers]({attach}slides/Session29_NN_Design_Layers.pdf)
 - [PPTX | Lecture 29: Design Layers]({attach}slides/Session29_NN_Design_Layers.pptx)
+
+## Exercises
+- [Lecture 29: A.1 - Constructing an MLP [Notebook]]({filename}notebook/s7-exc1-challenge.ipynb)

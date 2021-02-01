@@ -8,3 +8,6 @@ Tags: Missing Data, Imputation
 
 ## Slides
 - [PDF | Lecture 19: Missing Data]({attach}slides/Lecture19_Missingdata.pdf)
+
+## Exercises
+- [Lecture 19: 1 - Dealing with Missingness [Notebook]]({filename}notebook/lecture19-ex1.ipynb)

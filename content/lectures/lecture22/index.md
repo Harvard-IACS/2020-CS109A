@@ -8,3 +8,6 @@ Tags: Decision Trees, Classification
 
 ## Slides
 - [PDF | Lecture 22: Classification Trees]({attach}slides/Lecture22_decision_trees.pdf)
+
+## Exercises
+- [Lecture 22: Decision Tree Classification [Notebook]]({filename}notebook/lecture22_exercise.ipynb)

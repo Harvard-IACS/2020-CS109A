@@ -12,3 +12,7 @@ Tags: ridge, lasso, hyperparameters
 - [Ridge & Lasso - Hyperparameters [PPTX]]({attach}slides/Lecture12_Regularization_Hyperparameters.pptx)
 - [Ridge & Lasso - Comparison [PDF]]({attach}slides/Lecture12_Regularization_Comparison.pdf)
 - [Ridge & Lasso - Comparison [PPTX]]({attach}slides/Lecture12_Regularization_Comparison.pptx)
+
+## Exercises
+- [Lecture 12: 1 - Regularization with Cross-validation [Notebook]]({filename}notebook/reg_with_cv.ipynb)
+- [Lecture 12: 2 - Variation of coefficients [Notebook]]({filename}notebook/s5_ex1_challenge.ipynb)

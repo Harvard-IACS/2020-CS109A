@@ -8,3 +8,6 @@ Tags: PCA
 
 ## Slides
 - [PDF | Lecture 20: PCA]({attach}slides/Lecture20_pca.pdf)
+
+## Exercises
+- [Lecture 20: PCA [Notebook]]({filename}notebook/lecture20_ex1.ipynb)

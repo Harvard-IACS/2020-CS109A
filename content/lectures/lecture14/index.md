@@ -19,3 +19,6 @@ Tags: visualization, plotting, graphing, matplotlib, design
 - [Visualization 11 [PDF]]({attach}slides/Lecture14_Visualization_Part_11.pdf)
 - [Visualization 12 [PDF]]({attach}slides/Lecture14_Visualization_Part_12.pdf)
 - [Visualization [PPTX]]({attach}slides/Lecture14_Visualization.pptx)
+
+## Exercises
+- [Lecture 14: Visualization [Notebook]]({filename}notebook/L14_Ex1_solutions.ipynb)

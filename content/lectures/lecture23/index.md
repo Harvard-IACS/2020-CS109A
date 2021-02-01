@@ -9,3 +9,7 @@ Tags: bagging
 ## Slides
 - [PDF | Lecture 23: Bagging]({attach}slides/Lecture23_Bagging.pdf) 
 - [PPTX | Lecture 23: Bagging]({attach}slides/Lecture23_Bagging.pptx) 
+
+## Exercises
+- [Lecture 23: Regression with Bagging [Notebook]]({filename}notebook/overfitting_bagging.ipynb)
+- [Lecture 23: Bagging Classification with Decision Boundary [Notebook]]({filename}notebook/bagging-classification-scaffold.ipynb)

@@ -13,3 +13,7 @@ Tags: Regularization, Neural Networks, Data Augmentation, Weight Decay, Dropout
 - [PPTX | Lecture 32: NN Regularization A]({attach}slides/Lecture32_NNRegularization-Part A.pptx)
 - [PDF | Lecture 32: NN Regularization B]({attach}slides/Lecture32_NNRegularization-part B.pdf)
 - [PPTX | Lecture 32: NN Regularization B]({attach}slides/Lecture32_NNRegularization-part B.pptx)
+
+## Exercises
+- [Lecture 32: Regularization using L1 and L2 Norm [Notebook]]({filename}notebook/regularization_nn.ipynb)
+- [Lecture 32: Early Stopping [Notebook]]({filename}notebook/early_stopping.ipynb)
