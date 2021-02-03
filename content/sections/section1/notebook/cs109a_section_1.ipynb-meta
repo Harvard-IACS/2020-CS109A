@@ -1,6 +1,6 @@
 Title: S-Section 01: Introduction to Web Scraping
 Category: sections
-Slug: section1
+Slug: notebook/section1
 Author: Marios Mattheakis, Hayden Joy
 Date: 2020-09-11
 Tags: data scraping, beautifulsoup, pandas, matplotlib

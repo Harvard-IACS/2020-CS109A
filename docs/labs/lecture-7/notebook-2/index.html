@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="FALL 2020 - Harvard University, Institute for Applied Computational Science.     Lecture 7: Model Selection"
+    />
+    <meta name="author" content="Pavlos Protopapas" />
+<meta
+  name="keywords"
+  content="model selection, cross validation"
+/>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../../style/tipuesearch/tipuesearch.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../../style/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="../../../style/css/iacs.css" />
+
+    <title>Harvard CS109A | Lecture 7: Model Selection</title>
+
+    <style>
+      .navbar {
+        background-color: #c90016
+      }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" href="../../..">
+      <img
+        class="navbar-brand-logo"
+        src="../../../style/images/logo.png"
+      />
+      <h3 class="course-title">CS109A</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsDefault"
+      aria-controls="navbarsDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/syllabus.html">Syllabus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/materials.html">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/faq.html">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/preparation.html">Preparing for this course</a>
+        </li>
+        <form
+          class="form-inline my-2"
+          action="../../../search.html"
+          onsubmit="return validateForm(this.elements['q'].value);"
+        >
+          <div class="input-group input-group-sm">
+            <input
+              class="form-control"
+              type="text"
+              name="q"
+              placeholder="Search Topic"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+    <!-- .collapse navbar-collapse -->
+  </div>
+  <!-- .container -->
+</nav>
+    <main id="content" class="container">
+ <div>
+  <div class="float-left">
+    <p>
+      Key Word(s):       <a href="../../../pages/materials.html#model selection"
+        >model selection</a
+      >,       <a href="../../../pages/materials.html#cross validation"
+        >cross validation</a
+      >     </p>
+  </div>
+  <div class="float-right">
+    <a href="../../../lectures/lecture07/notebook/s2-exc1-challenge.ipynb">
+      Download Notebook <i class="fas fa-download"></i>
+    </a>
+  </div>
+</div>
+<hr />
+<div class="container article">
+<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Read the file named "colinearity.csv"</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"colinearity.csv"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Take a quick look at the dataset</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>x1</th>
+<th>x2</th>
+<th>x3</th>
+<th>x4</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>-1.109823</td>
+<td>-1.172554</td>
+<td>-0.897949</td>
+<td>-6.572526</td>
+<td>-158.193913</td>
+</tr>
+<tr>
+<th>1</th>
+<td>0.288381</td>
+<td>0.360526</td>
+<td>2.298690</td>
+<td>3.884887</td>
+<td>198.312926</td>
+</tr>
+<tr>
+<th>2</th>
+<td>-1.059194</td>
+<td>0.833067</td>
+<td>0.285517</td>
+<td>-1.225931</td>
+<td>12.152087</td>
+</tr>
+<tr>
+<th>3</th>
+<td>0.226017</td>
+<td>1.979367</td>
+<td>0.744038</td>
+<td>5.380823</td>
+<td>190.281938</td>
+</tr>
+<tr>
+<th>4</th>
+<td>0.664165</td>
+<td>-1.373739</td>
+<td>0.317570</td>
+<td>-0.437413</td>
+<td>-72.681681</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Creation-of-Linear-Regression-Objects">Creation of Linear Regression Objects<a class="anchor-link" href="#Creation-of-Linear-Regression-Objects">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Choose all the predictors as the variable 'X' (note capitalization of X for multiple features)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">___</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Choose the response variable 'y' for y values</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">___</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_coeff) ###</span>
+
+<span class="c1"># Here we create a dictionary that will store the Beta values of each linear regression model</span>
+<span class="n">linear_coef</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">X</span><span class="p">:</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">___</span><span class="p">]]</span>
+
+    <span class="c1">#Create a linear regression object</span>
+    <span class="n">linreg</span> <span class="o">=</span> <span class="n">____</span>
+
+    <span class="c1">#Fit it with training values. </span>
+    <span class="c1">#Remember to choose only one column at a time as the predictor variable</span>
+    <span class="n">linreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">___</span><span class="p">,</span><span class="n">___</span><span class="p">)</span>
+    
+    <span class="c1"># Add the coefficient value of the model to the list</span>
+    <span class="n">linear_coef</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linreg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Multi-Linear-Regression-using-all-variables">Multi-Linear Regression using all variables<a class="anchor-link" href="#Multi-Linear-Regression-using-all-variables">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Here you must do a multi-linear regression with all predictors</span>
+
+<span class="c1"># use sklearn library to define a new model 'multi_linear'</span>
+<span class="n">multi_linear</span> <span class="o">=</span> <span class="n">____</span>
+
+<span class="c1"># Fit the multi-linear regression on all features and the response</span>
+
+<span class="n">multi_linear</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">___</span><span class="p">,</span><span class="n">___</span><span class="p">)</span>
+
+<span class="c1"># append the coefficients (plural) of the model to a variable multi_coef</span>
+
+<span class="n">multi_coef</span> <span class="o">=</span> <span class="n">multi_linear</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Printing-the-individual-$\beta$-values">Printing the individual $\beta$ values<a class="anchor-link" href="#Printing-the-individual-$\beta$-values">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Run this command to see the beta values of the linear regression models</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'By simple(one variable) linear regression for each variable:'</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    
+    <span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Value of beta</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">linear_coef</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>By simple(one variable) linear regression for each variable:
+'Value of beta1 = 34.73'
+'Value of beta2 = 68.63'
+'Value of beta3 = 59.40'
+'Value of beta4 = 20.92'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_multi_coeff) ###</span>
+
+<span class="c1">#Now let's compare with the values from the multi-linear regression</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'By multi-Linear regression on all variables'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Value of beta</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">multi_coef</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>By multi-Linear regression on all variables
+'Value of beta1 = -24.61'
+'Value of beta2 = 27.72'
+'Value of beta3 = 37.67'
+'Value of beta4 = 19.27'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why-do-you-think-the-$\beta$-values-are-different-in-the-two-cases?">Why do you think the $\beta$ values are different in the two cases?<a class="anchor-link" href="#Why-do-you-think-the-$\beta$-values-are-different-in-the-two-cases?">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">corrMatrix</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'x1'</span><span class="p">,</span><span class="s1">'x2'</span><span class="p">,</span><span class="s1">'x3'</span><span class="p">,</span><span class="s1">'x4'</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corrMatrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_png output_subarea">
+<img src="data:image/png;base64,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
+" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+</div>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2020 &copy;
+      <a class="text-muted" href="https://iacs.seas.harvard.edu/">Institute for Applied Computational Science</a>
+    </span>
+  </div>
+</footer>     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
