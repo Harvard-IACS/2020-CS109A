@@ -1,0 +1,206 @@
+{
+    "metadata": {
+        "kernelspec": {
+            "name": "python3",
+            "display_name": "Python 3",
+            "language": "python"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 4,
+    "cells": [
+        {
+            "cell_type": "code",
+            "execution_count": 1,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# import important libraries\n",
+                "\n",
+                "%matplotlib inline\n",
+                "import numpy as np\n",
+                "import pandas as pd\n",
+                "from math import exp\n",
+                "import matplotlib.pyplot as plt\n",
+                "from sklearn.preprocessing import normalize\n",
+                "from sklearn.metrics import accuracy_score"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 2,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Make a dataframe of the file \"insurance_claim.csv\"\n",
+                "\n",
+                "data_filename = 'insurance_claim.csv'\n",
+                "df = pd.read_csv(data_filename)"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 0,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Take a quick look of the data, notice that the response variable is binary\n",
+                "\n",
+                "df.head()"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 3,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Assign age as the predictor variable using double brackets\n",
+                "x = df[[___]]\n",
+                "\n",
+                "# Assign insuranceclaim as the response variable\n",
+                "y = df[___]\n",
+                ""
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 0,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Make a plot of the response (insuranceclaim) vs the predictor (age)\n",
+                "plt.plot(___,___,'o', markersize=7,color=\"#011DAD\",label=\"Data\")\n",
+                "\n",
+                "# Also add the labels for 'x' \u0026 'y' values\n",
+                "plt.xlabel(___)\n",
+                "plt.ylabel(___)\n",
+                "\n",
+                "plt.xticks(np.arange(18, 80, 4.0))\n",
+                "\n",
+                "# Label the value 1 as 'Yes' \u0026 0 as 'No'\n",
+                "plt.yticks((0,1), labels=('No', 'Yes'))\n",
+                "plt.legend(loc='best')\n",
+                "plt.show()"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 5,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "### edTest(test_beta_guesstimate) ###\n",
+                "# Guesstimate the values of beta0 \u0026 beta1\n",
+                "\n",
+                "beta0 = ___\n",
+                "\n",
+                "beta1 = ___\n",
+                ""
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 6,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "### edTest(test_beta_computation) ###\n",
+                "# Use the logistic function below to predict the response based on the input\n",
+                "logit = []\n",
+                "\n",
+                "for i in x:\n",
+                "    # Append the P(y=1) values to the logit list\n",
+                "    logit.append(___)\n",
+                "    \n",
+                "    "
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 6,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# If the predictions are above a threshold of 0.5, predict as 1, else 0\n",
+                "\n",
+                "y_pred = []\n",
+                "\n",
+                "for py in ___:\n",
+                "    if py \u003e= 0.5:\n",
+                "        ____\n",
+                "    else:\n",
+                "        ____\n",
+                "        \n",
+                ""
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 0,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Use accuracy_score function to find the accuracy \n",
+                "\n",
+                "accuracy = accuracy_score(___, ___)\n",
+                "\n",
+                "# Print the accuracy\n",
+                "print (___)"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 0,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Make a plot similar to the one above along with the fit curve\n",
+                "plt.plot(___, ___,'o', markersize=7,color=\"#011DAD\",label=\"Data\")\n",
+                "\n",
+                "plt.plot(___,___,linewidth=2,color='black',label=\"Prediction\")\n",
+                "\n",
+                "plt.xticks(np.arange(18, 80, 4.0))\n",
+                "plt.xlabel(\"Age\")\n",
+                "plt.ylabel(\"Insurance claim\")\n",
+                "plt.yticks((0,1), labels=('No', 'Yes'))\n",
+                "plt.legend()\n",
+                "plt.show()"
+            ]
+        },
+        {
+            "attachments": {},
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## Post exercise question:\n",
+                "\n",
+                "In this exercise, you may have had to stumble around to find the right values of $\\beta_0$ and $\\beta_1$ to get accurate results.\n",
+                "\n",
+                "Although you may have used visual inspection to find a good fit, in most problems you would need a quantative method to measure the performance of your model. (*Loss function*)\n",
+                "\n",
+                "Which of the following below are **NOT** possible ways of quantifying the performance of the model.\n",
+                "\n",
+                "- A. Compute the mean squared error loss of the predicted labels.\n",
+                "- B. Evaluate the log-likelihood for this Bernoulli response variable.\n",
+                "- C. Go the the temple of Apollo at Delphi, and ask the high priestess Pythia\n",
+                "- D. Compute the total number of misclassified labels."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 0,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "### edTest(test_quiz) ###\n",
+                "\n",
+                "# Put down your answers in a string format below (using quotes)\n",
+                "\n",
+                "# for. eg, if you think the options are 'A' \u0026 'B', input below as \"A,B\"\n",
+                "\n",
+                "answer = ___"
+            ]
+        }
+    ]
+}
