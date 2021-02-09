@@ -1266,7 +1266,46 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: A.2 - Simple kNN regression</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal of this exercise is to <strong>re-create the plots</strong> below from the lecture.</p>
+<p><img src="../img/plot2.png" style="width: 500px;" /></p>
+<p><img src="../img/plot3.png" style="width: 500px;" /></p>
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><p>Part 1 <strong>KNN by hand for k=1</strong></p>
+<ul>
+<li>Read the Advertisement data </li>
+<li>Get a subset of the data from row 5 to row 13</li>
+<li>Apply the kNN algorithm by hand and plot the first graph as given above.</li>
+</ul>
+<p>Part 2 <strong>Using sklearn package</strong></p>
+<ul>
+<li>Read the entire Advertisement dataset</li>
+<li>Split the data into train and test sets using <code>train_test_split()</code> function</li>
+<li>Select <code>k_list</code> as possible k values ranging from 1 to 70.</li>
+<li>For each value of k in <code>k_list</code>:<ul>
+<li>Use sklearn <code>KNearestNeighbors()</code> to fit train data</li>
+<li>Predict on the test data</li>
+<li>Use the helper code to get the second plot above for k=1,10,70</li>
+</ul>
+</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://numpy.org/doc/stable/reference/generated/numpy.argsort.html" target="_blank">np.argsort()</a> : Returns the indices that would sort an array.</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html" target="_blank">df.iloc[]</a> : Returns a subset of the dataframe that is contained in the column range passed as the argument</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.values.html" target="_blank">df.values</a> : Returns a Numpy representation of the DataFrame.</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.idxmin.html" target="_blank">pd.idxmin()</a> : Returns index of the first occurrence of minimum over requested axis.</p>
+<p><a href="http://pageperso.lif.univ-mrs.fr/~francois.denis/IAAM1/numpy-html-1.14.0/reference/generated/numpy.ndarray.min.html" target="_blank">np.min()</a> : Returns the minimum along a given axis.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.max.html" target="_blank">np.max()</a> : Returns the maximum along a given axis.</p>
+<p><a href="https://numpy.org/devdocs/reference/generated/numpy.zeros.html" target="_blank">np.zeros()</a> : Returns a new array of given shape and type, filled with zeros.</p>
+<p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html" target="_blank">train_test_split(X,y)</a> : Split arrays or matrices into random train and test subsets.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html" target="_blank">np.linspace()</a> : Returns evenly spaced numbers over a specified interval.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html" target="_blank">KNeighborsRegressor(n_neighbors=k_value)</a> : Regression-based on k-nearest neighbors.</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
@@ -1682,7 +1721,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span> 

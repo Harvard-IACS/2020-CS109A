@@ -1266,7 +1266,37 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: B.1 - Finding best k in kNN regression</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal here is to <strong>find the value of k of the best performing model</strong> based on the test MSE.</p>
+<p><img src="../img/plot4.png" style="width: 500px;" /></p>
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><ul>
+<li>Read the data into a dataframe object using <strong>pandas.read_csv</strong></li>
+<li>Select the sales column as the response variable and TV budget column as the predictor variable</li>
+<li>Make a train-test split using <strong>sklearn.model_selection.train_test_split</strong></li>
+<li>Create a list of <strong>integer</strong> k values using <strong>numpy.linspace</strong></li>
+<li>For each value of k<ul>
+<li>Fit a knn regression on train set</li>
+<li>Calculate MSE on test set and store it</li>
+</ul>
+</li>
+<li>Plot the test MSE values for each k</li>
+<li>Find the k value associated with the lowest test MSE</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html" target="_blank">train_test_split(X,y)</a> : Split arrays or matrices into random train and test subsets.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html" target="_blank">np.linspace()</a> : Returns evenly spaced numbers over a specified interval.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html" target="_blank">KNeighborsRegressor(n_neighbors=k_value)</a> : Regression-based on k-nearest neighbors.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" target="_blank">mean_squared_error()</a> : Computes the mean squared error regression loss.</p>
+<p><a href="https://www.geeksforgeeks.org/python-dictionary-keys-method/?ref=lbp" target="_blank">dict.keys()</a> : returns a view object that displays a list of all the keys in the dictionary.</p>
+<p><a href="https://www.programiz.com/python-programming/methods/dictionary/values" target="_blank">dict.values()</a> : returns a list of all the values available in a given dictionary.</p>
+<p><a href="https://www.tutorialspoint.com/python/dictionary_items.htm" target="_blank">dict.items()</a> : returns a list of dict's (key, value) tuple pairs</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -1295,7 +1325,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Data set used in this exercise</span>
@@ -1311,7 +1341,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># again, take a quick look at the data</span>
@@ -1394,7 +1424,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -1450,7 +1480,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot k against MSE</span>
@@ -1476,7 +1506,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_mse) ###</span>
@@ -1504,7 +1534,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer here </span>
@@ -1515,7 +1545,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Run this cell to calculate the R2_score of your best model</span>

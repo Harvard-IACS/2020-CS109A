@@ -1277,9 +1277,51 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise 1</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p><strong>Introduction</strong></p>
+<p>Regular Expressions (RegEx) are a mechanism that allows one to define a pattern to be searched for. That is, Regular Expressions aren't just a Python concept or library; they extend beyond the scope of any one programming language. Fortunately, many programming languages support them, though. This makes string processing (namely, parsing) incredibly convenient, as it's vastly easier than writing our own search query (e.g., via a series of if-statements)</p>
+<p>Many programming languages slightly differ in their syntax for creating RegEx. RegEx's can quickly get tedious at times, and it is <strong>not</strong> expected for any student to memorize all of the possible character sequences or to become a master at them. We <strong>do</strong> expect you to know what they are and to have basic exposure to them, so that you are aware of their incredible utility and can use them in the future when you want to parse through text. It is perfectly permissible -- and expected -- for students to reference the syntax guide while creating RegEx. You will quickly learn that there are a few main, powerful character sequences that tend to get used over and over, and it's these that you will likely find useful for committing to memory:</p>
+<ul>
+<li>any whitespace</li>
+<li>non-whitespace</li>
+<li>any character</li>
+<li>non-character</li>
+<li>digit</li>
+<li>non-digit</li>
+<li>occurs 0 or more times</li>
+<li>occurs 1 or more times</li>
+<li>start of a string</li>
+<li>end of a string</li>
+<li>the difference between greedy and non-greedy (aka reluctant) searching</li>
+</ul>
+<p><strong>Resources</strong></p>
+<ol>
+<li><p>You may find <a href="https://www.debuggex.com/cheatsheet/regex/python" target="_blank">this</a> "cheatsheet" useful.</p>
+</li>
+<li><p>As part of your post-class assignment, you should look through <a href="https://docs.python.org/3/howto/regex.html" target="_blank">the official Python documentation</a>. It's okay to skim most sections (skip <code>.split()</code> and <code>.sub()</code>), but you should pay particular attention to:</p>
+</li>
+</ol>
+<p>the Performing Matches section (<code>.match()</code>)</p>
+<p>Grouping section (<code>.group()</code>)</p>
+<p>Greedy vs Non-Greedy</p>
+<ol>
+<li>For immediate, visual feedback as to if your regular expression is matching the way you want, I highly recommend visiting websites that provide Online Regular Expression testing, e.g.:</li>
+</ol>
+<ul>
+<li><a href="https://pythex.org/" target="_blank">Pythex</a> <-- my favorite (it includes a cheatsheet button)</li>
+<li><a href="https://regex101.com/" target="_blank">Regex101</a> </li>
+</ul>
+<p><strong>Exercise</strong></p>
+<p>In this exercise, we want you to practice using RegularExpression. If you have used them many times in the past, this will likely be a breeze for you. If this is your first time, please do not be intimidated by the unusual-looking syntax. After a few correct RegEx, you will be a pro in no time.</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
@@ -1298,7 +1340,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># she was elected as State Representative of my district (Somerville) this week</span>
@@ -1325,7 +1367,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_a) ###</span>
@@ -1345,7 +1387,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_b) ###</span>
@@ -1365,7 +1407,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_c) ###</span>

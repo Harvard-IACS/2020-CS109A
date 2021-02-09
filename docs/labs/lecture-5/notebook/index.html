@@ -1266,7 +1266,31 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: A.1 - Plotting the data</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The aim of this exercise is to <strong>plot</strong> TV Ads vs Sales based on the Advertisement dataset which should look similar to the graph given below.</p>
+<p><img src="../img/plot.png" style="width: 500px;" /></p>
+<h2 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h2><ul>
+<li><p>Read the Advertisement data and view the top rows of the dataframe to get an understanding of the data and columns</p>
+</li>
+<li><p>Select the first 7 observations and the columns <code>TV</code> and <code>sales</code>.</p>
+</li>
+<li><p>Create a scatter plot <code>TV</code> budget vs <code>sales</code> like in the lecture.</p>
+</li>
+</ul>
+<h2 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h2><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">pd.read_csv(filename)</a> : Returns a pandas dataframe containing the data and labels from the file data.</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html?highlight=iloc#pandas.DataFrame.iloc" target="_blank">df.iloc[]</a> : Returns a subset of the dataframe that is contained in the row range passed as the argument.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html" target="_blank">np.linspace()</a> : Returns evenly spaced numbers over a specified interval.</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html?highlight=head#pandas.DataFrame.head" target="_blank">df.head()</a> : Returns the first 5 rows of the dataframe with the column names</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">plt.scatter()</a> : A scatter plot of y vs. x with varying marker size and/or colour</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.pyplot.xlabel.html" target="_blank">plt.xlabel()</a> : This is used to specify the text to be displayed as the label for the x-axis</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -1288,7 +1312,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Data set used in this exercise</span>
@@ -1303,7 +1327,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get a quick look of the data and columns</span>
@@ -1315,7 +1339,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_pandas) ###</span>
@@ -1328,7 +1352,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Print your new dataframe to see if you have selected 7 rows correctly</span>
@@ -1348,7 +1372,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use a scatter plot for TV vs Sales</span>
@@ -1371,7 +1395,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span> 
