@@ -1258,9 +1258,36 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: 2 - Linear Regression in Statsmodels</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal of this exercise is to use <code>statsmodels</code> to fit and interpret a regression model.</p>
+<h1 id="Roadmap">Roadmap<a class="anchor-link" href="#Roadmap">¶</a></h1><ul>
+<li>Read the dataset 'movies.csv' as a dataframe</li>
+<li>Look at the scatterplot to predict revenue from budget costs, and investigate the appropriateness of linear regression.</li>
+<li>Estimate the linear regression model using both <code>sklearn</code> and <code>statsmodels</code>, and compare the results.</li>
+<li>Compare the coefficients of the multiple regression models (with additive effects and interactive effects) with those of the simple linear regression model.</li>
+<li>Investigate the appropriateness of the linear regression assumptions that the probabilisitic model implies.</li>
+<li>Bonus Question: calculate the log-likelihood for a linear regression model!</li>
+</ul>
+<h1 id="Hints">Hints<a class="anchor-link" href="#Hints">¶</a></h1><p>statmodels.OLS()
+<a href="url" target="_blank">hyperlinked</a> : Fir an ordinary least squares (OLS) regression model using <code>statsmodels</code>.</p>
+<p>statmodels.add_constant()
+<a href="url" target="_blank">hyperlinked</a> : Adds a column of ones to the design matrix <strong>X</strong>.</p>
+<p>LinearRegression()
+<a href="url" target="_blank">hyperlinked</a> : Returns a linear regression object from the sklearn library.</p>
+<p>LinearRegression().coef_
+<a href="url" target="_blank">hyperlinked</a> : This attribute returns the coefficient(s) of the linear regression object</p>
+<p>sklearn.fit() 
+<a href="url" target="_blank">hyperlinked</a> : Fit linear model</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import libraries</span>
@@ -1275,7 +1302,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Read the data from 'movies.csv' to a dataframe</span>
@@ -1287,7 +1314,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Take a peak at the dataset</span>
@@ -1306,7 +1333,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># create the scatterplot to predict 'domestic'</span>
@@ -1331,7 +1358,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_sklearn_regress) ###</span>
@@ -1354,7 +1381,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -1380,7 +1407,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_ols2) ###</span>
@@ -1405,7 +1432,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_interaction) ###</span>
@@ -1436,7 +1463,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># define predicted values (yhat) and residuals</span>
@@ -1453,7 +1480,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># residual scatterplot </span>
@@ -1481,7 +1508,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### use ols1.params,ols1.mse_resid, and norm.logpdf as your basis</span>

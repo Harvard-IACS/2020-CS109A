@@ -1262,9 +1262,71 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: 1 - Regularization with Cross-validation</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The aim of this exercise is to understand regularization with cross-validation.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><ul>
+<li>Initialising the required parameters for this exercise. This can be viewed in the scaffold.</li>
+<li>Read the data file <code>polynomial50.csv</code> and assign the predictor and response variables.</li>
+<li>Use the helper code to visualise the data.</li>
+<li>Define a function <code>reg_with_validation</code> that performs Ridge regularization by taking a random_state parameter.<ul>
+<li>Split the data into train and validation sets by specifying the random_state.</li>
+<li>Compute the polynomial features for the train and validation sets.</li>
+<li>Run a loop for the alpha values. Within the loop:<ul>
+<li>Initialise the Ridge regression model with the specified alpha.</li>
+<li>Fit the model on the training data and predict and on the train and validation set.</li>
+<li>Compute the MSE of the train and validation prediction.</li>
+<li>Store these values in lists.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run <code>reg_with_validation</code> for varying random states and plot a graph that depicts the best alpha value and the best MSE. The graph will be similar to the one given above.</li>
+<li>Define a function <code>reg_with_cross_validation</code> that performs Ridge regularization with cross-validation by taking a random_state parameter.<ul>
+<li>Sample the data using the specified random state.</li>
+<li>Assign the predictor and response variables using the sampled data.</li>
+<li>Run a loop for the alpha values. Within the loop:<ul>
+<li>Initialise the Ridge regression model with the specified alpha.</li>
+<li>Fit the model on the entire data and using cross-validation with 5 folds.</li>
+<li>Get the train and validation MSEs by taking their mean.</li>
+<li>Store these values in lists.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run <code>reg_with_cross_validation</code> for varying random states and plot a graph that depicts the best alpha value and the best MSE.</li>
+<li>Use the helper code given to print your best MSEs in the case of simple validation and cross-validation for different random states.</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html" target="_blank">df.sample()</a> : Returns a random sample of items from an axis of the object.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html" target="_blank">sklearn.cross_validate()</a> : Evaluate metrics by cross-validation and also record fit/score times.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html" target="_blank">np.mean()</a> : Compute the arithmetic mean along the specified axis.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html" target="_blank">sklearn.RidgeRegression()</a> : Linear least squares with l2 regularization.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge.fit" target="_blank">sklearn.fit()</a> : Fit Ridge egression model.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge.predict" target="_blank">sklearn.predict()</a> : Predict using the linear model.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html" target="_blank">sklearn.mean_squared_error()</a> : Mean squared error regression loss</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html" target="_blank">sklearn.PolynomialFeatures()</a> : Generate polynomial and interaction features.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html#sklearn.preprocessing.PolynomialFeatures.fit_transform" target="_blank">sklearn.fit_transform()</a> : Fit to data, then transform it.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import required libraries</span>
@@ -1286,7 +1348,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialising required parameters</span>
@@ -1307,7 +1369,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Read the file 'polynomial50.csv' as a dataframe</span>
@@ -1328,7 +1390,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use the helper code below to visualise the distribution of the x, y values & also the value of the true function f</span>
@@ -1352,7 +1414,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Function to perform regularization with simple validation</span>
@@ -1400,7 +1462,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_validation) ###</span>
@@ -1450,7 +1512,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Function to perform regularization with cross validation</span>
@@ -1498,7 +1560,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_cross_validation) ###</span>
@@ -1546,7 +1608,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use the helper code below to print your findings</span>

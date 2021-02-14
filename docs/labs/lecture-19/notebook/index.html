@@ -1260,9 +1260,28 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise 1 - Dealing with Missingness</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal of the exercise is to get comfortable with missingness, and how to handle it and do some basic imputations in skealrn.  Firday's class will go further into handling missngness.</p>
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><p>We are using synthetic data to illustrate the issues with missing data.  We will</p>
+<ul>
+<li>Create a synthetic dataset from two predictors</li>
+<li>Create missingness in 3 different ways</li>
+<li>Handle it 4 different wats (dropping rows, mean imputation, OLS imputation, and 3-NN imputation)</li>
+</ul>
+<h1 id="Hits:">Hits:<a class="anchor-link" href="#Hits:">¶</a></h1><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank">pandas.dropna</a> : Drop rows with missingness</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank">pandas.fillna</a> : Fill in missingness</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" target="_blank">sklearn.LinearRegression</a> : Generates a Linear Regression Model</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html" target="_blank">sklearn.KNNImputer</a> : Fill in missingness</p>
+<p><strong>Note: This exercise is auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -1279,7 +1298,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -1311,7 +1330,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">500</span>
@@ -1336,7 +1355,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -1365,7 +1384,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">x1_mcar</span> <span class="o">=</span> <span class="n">x1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1390,7 +1409,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create the 3 datasets with missingness</span>
@@ -1409,7 +1428,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># no missingness: on the full dataset</span>
@@ -1422,7 +1441,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Fit the linear regression blindly on the dataset with MCAR missingness, see what happens</span>
@@ -1455,7 +1474,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># no missingness for comparison sake</span>
@@ -1468,7 +1487,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># MCAR: drop the rows that have any missingness</span>
@@ -1481,7 +1500,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_mar) ###</span>
@@ -1496,7 +1515,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># MNAR: drop the rows that have any missingness</span>
@@ -1531,7 +1550,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Make back-=up copies for later since we'll have lots of imputation approaches.</span>
@@ -1552,7 +1571,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mcar</span> <span class="o">=</span> <span class="n">df_mcar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1567,7 +1586,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_mar_mean) ###</span>
@@ -1585,7 +1604,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mnar</span> <span class="o">=</span> <span class="n">df_mnar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1626,7 +1645,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mcar</span> <span class="o">=</span> <span class="n">df_mcar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1648,7 +1667,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mar</span> <span class="o">=</span> <span class="n">df_mar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1666,7 +1685,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_mnar_ols) ###</span>
@@ -1708,7 +1727,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mcar</span> <span class="o">=</span> <span class="n">df_mcar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1723,7 +1742,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mar</span> <span class="o">=</span> <span class="n">df_mar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1738,7 +1757,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_mnar</span> <span class="o">=</span> <span class="n">df_mnar_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1781,7 +1800,7 @@ $$ Y = 3X_1 + 2X_2 + \varepsilon,\hspace{0.1in} \varepsilon \sim N(0,1)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span> 

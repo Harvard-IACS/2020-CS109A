@@ -1258,7 +1258,41 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: A.2 - MSE for varying β1 values</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal here is to produce a plot like the one given below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image2.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><p>We want to find the model that fit best the data. To do so we are going to</p>
+<p>1) Fix $\beta_0 = 2.2$,</p>
+<p>2) Change $\beta_1$ in a range $[-2, 3]$, and</p>
+<p>3) Estimate the fit of the model.</p>
+<p>Create empty lists;</p>
+<p>Set a range of values for $\beta_1$ and compute MSE for each one;</p>
+<p>Compute MSE for varying $\beta_1$</p>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html" target="_blank">np.linspace(start, stop, num)</a> : Return evenly spaced numbers over a specified interval.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html" target="_blank">np.arange(start, stop, increment)</a> : Return evenly spaced values within a given interval</p>
+<p><a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank">list_name.append(item)</a> : Add an item to the end of the list</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.pyplot.xlabel.html" target="_blank">plt.xlabel()</a> : This is used to specify the text to be displayed as the label for the x-axis</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.pyplot.ylabel.html" target="_blank">plt.ylabel()</a> : This is used to specify the text to be displayed as the label for the y-axis</p>
+<p><strong>Note: This exercise is auto-graded and you can try multiple attempts</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
@@ -1424,7 +1458,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_beta) ###</span>
@@ -1457,7 +1491,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_mse) ###</span>
@@ -1479,7 +1513,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer here</span>

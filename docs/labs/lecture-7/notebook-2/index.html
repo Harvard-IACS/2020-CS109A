@@ -1260,7 +1260,30 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: A.2 - Multi-collinearity vs Model Predictions</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal of this exercise is to see how multi-collinearity can affect the predictions of a model.</p>
+<p>For this, perform a multi-linear regression on the given dataset and compare the coefficients with those from simple linear regression of the individual predictors.</p>
+<h1 id="Roadmap">Roadmap<a class="anchor-link" href="#Roadmap">¶</a></h1><ul>
+<li>Read the dataset 'colinearity.csv' as a dataframe</li>
+<li>For each of the predictor variable, create a linear regression model with the same response variable</li>
+<li>Compute the coefficients for each model and store in a list.</li>
+<li>Fit all predictors using a separate multi-linear regression object</li>
+<li>Calculate the coefficients of each model</li>
+<li>Compare the coefficients of the multi-linear regression model with those of the simple linear regression model.</li>
+</ul>
+<p><strong>DISCUSSION:</strong> Why do you think the coefficients change and what does it mean?</p>
+<h1 id="Hints">Hints<a class="anchor-link" href="#Hints">¶</a></h1><p><a href="https://scikit-learn.org/stable/index.html" target="_blank">LinearRegression()</a> : Returns a linear regression object from the sklearn library.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" target="_blank">LinearRegression().coef_</a> : This attribute returns the coefficient(s) of the linear regression object</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" target="_blank">sklearn.fit()</a> : Fit linear model</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/version/0.22.0/generated/pandas.Series.reshape.html" target="_blank">df.reshape()</a> : Return a ndarray with the values in the specified shape</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">

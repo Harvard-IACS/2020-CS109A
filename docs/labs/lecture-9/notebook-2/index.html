@@ -1260,7 +1260,29 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: B.1 - Beta values for Data from Random Universe using Bootstrap</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>Solve the previous exercise by building your own bootstrap function.</p>
+<h1 id="Instructions">Instructions<a class="anchor-link" href="#Instructions">¶</a></h1><p>Define a function bootstrap that takes a dataframe as the input. Use NumPy's random.randint() function to generate random integers in the range of the length of the dataset. These integers will be used as the indices to access the rows of the dataset.</p>
+<p>Similar to the previous exercise, compute the $\beta_0$ and $\beta_1$ values for each instance of the dataframe.</p>
+<p>Plot the $\beta_0$, $\beta_1$ histograms.</p>
+<h1 id="Hints">Hints<a class="anchor-link" href="#Hints">¶</a></h1><p>To compute the beta values use the following equations:</p>
+<p>$\beta_{0}=\bar{y}-\left(b_{1} * \bar{x}\right)$</p>
+<p>$\beta_{1}=\frac{\sum(x-\bar{x}) *(y-\bar{y})}{\sum(x-\bar{x})^{2}}$</p>
+<p>where $\bar{x}$ is the mean of $x$ and $\bar{y}$ is the mean of $y$</p>
+<p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.randint.html" target="_blank">np.random.randint()</a> : Returns list of integers as per mentioned size</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html" target="_blank">np.dot()</a> : Computes the dot product of two arrays</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html" target="_blank">df.iloc[]</a> : Purely integer-location based indexing for selection by position</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.axes.Axes.hist.html" target="_blank">ax.hist()</a> : Plots a histogram</p>
+<p><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html" target="_blank">ax.set_xlabel()</a> : Sets label for x-axthe is</p>
+<p><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html" target="_blank">ax.set_ylabel()</a> : Sets label for the y-axis</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -1366,7 +1388,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_beta) ###</span>
@@ -1477,7 +1499,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span> 

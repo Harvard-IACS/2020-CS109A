@@ -1260,7 +1260,46 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: A.1 - Beta values for data from Random Universe</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>Given a RandomUniverse(dataframe)->dataframe function that gives a new dataset from a "parallel" universe, calculate the $\beta_0$ 's and $\beta_1$ 's and plot a histogram like the one below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Roadmap">Roadmap<a class="anchor-link" href="#Roadmap">¶</a></h1><ul>
+<li>Get a new dataframe using the RandomUniverse function already provided in the exercise</li>
+<li>Calculate $\beta_0$, $\beta_1$ for that particular dataframe</li>
+<li>Add the calculated $\beta_0$ and $\beta_1$ values to a python list</li>
+<li>Plot a histogram using the lists calculated above</li>
+</ul>
+<p>Change the number of <code>parallelUniverses</code> and comment on what you observe. Discuss within the group why you see this behavior. Did you expect the spread to change? Why or why not?</p>
+<h1 id="Hints">Hints<a class="anchor-link" href="#Hints">¶</a></h1><ul>
+<li>To compute the beta values use the following equations:</li>
+</ul>
+<p>$\beta_{0}=\bar{y}-\left(b_{1} * \bar{x}\right)$</p>
+<p>$\beta_{1}=\frac{\sum(x-\bar{x}) *(y-\bar{y})}{\sum(x-\bar{x})^{2}}$</p>
+<p>where $\bar{x}$ is the mean of $x$ and $\bar{y}$ is the mean of $y$</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html" target="_blank">np.dot()</a> : Computes the dot product of two arrays</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.axes.Axes.hist.html" target="_blank">ax.hist()</a> : Plots a histogram</p>
+<p><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html" target="_blank">ax.set_xlabel()</a> : Sets label for x-axis</p>
+<p><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.set_ylabel.html" target="_blank">ax.set_ylabel()</a> : Sets label for the y-axis</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">

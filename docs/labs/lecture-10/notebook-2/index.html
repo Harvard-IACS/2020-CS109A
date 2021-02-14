@@ -1260,7 +1260,53 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: 2 - Prediction CI</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>You are the manager of the Advertising division of your company, and your boss asks you the question, <strong>"How much more sales will we have if we invest $1000 dollars in TV advertising?"</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image2.jpeg" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The goal of this exercise is to estimate the <strong>Sales</strong> with a 95% confidence interval using the Advertising.csv dataset.</p>
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><ul>
+<li>Read the file Advertising.csv as a dataframe.</li>
+<li>Fix a budget amount of 1000 dollars for TV advertising as variable called Budget</li>
+<li>Select the number of bootstraps.</li>
+<li>For each bootstrap:<ul>
+<li>Select a new dataframe with the predictor as TV and the response as Sales.</li>
+<li>Fit a simple linear regression on the data.</li>
+<li>Predict on the budget and compute the error estimate using the helper function <code>error_func()</code></li>
+<li>Store the <code>sales</code> as a sum of the prediction and the error estimate and append to <code>sales_dist</code></li>
+</ul>
+</li>
+<li>Sort the <code>sales_dist which is a distribution of predicted sales over</code>numboot` bootstraps.</li>
+<li>Compute the 95% confidence interval of sales_dist</li>
+<li>Use the helper function <code>plot_simulation</code> to visualize the distribution and print the estimated sales.</li>
+</ul>
+<h1 id="Hints">Hints<a class="anchor-link" href="#Hints">¶</a></h1><p><a href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.randint.html" target="_blank">np.random.randint()</a> : Returns list of integers as per mentioned size</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html" target="_blank">df.sample()</a> : Get a new sample from a dataframe</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.pyplot.hist.html" target="_blank">plt.hist()</a> : Plots a histogram</p>
+<p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axvline.html" target="_blank">plt.axvline()</a> : Adds a vertical line across the axes</p>
+<p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axhline.html" target="_blank">plt.axhline()</a> : Add a horizontal line across the axes</p>
+<p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html" target="_blank">plt.legend()</a> : Place a legend on the axes</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.sort.html#numpy.ndarray.sort" target="_blank">ndarray.sort()</a> : Returns the sorted ndarray.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.percentile.html" target="_blank">np.percentile(list, q)</a> : Returns the q-th percentile value based on the provided ascending list of values.</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
