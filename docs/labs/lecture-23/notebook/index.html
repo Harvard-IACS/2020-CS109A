@@ -1261,6 +1261,43 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: Bagging Classification with Decision Boundary</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal of this exercise is to use <strong>Bagging</strong> (Bootstrap Aggregated) to solve a classification problem and visualize the influence on Bagging on trees with varying depths.</p>
+<p>Your final plot should resemble the one below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image2.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><ul>
+<li>Read the dataset <code>agriland.csv</code>.</li>
+<li>Assign the predictor and response variables as <code>X</code> and <code>y</code>.</li>
+<li>Split the data into train and test sets with <code>test_split=0.2</code> and <code>random_state=44</code>.</li>
+<li>Fit a single <code>DecisionTreeClassifier()</code> and find the accuracy of your prediction.</li>
+<li>Complete the helper function <code>prediction_by_bagging()</code> to find the average predictions for a given number of bootstraps.</li>
+<li>Now perform <strong>Bagging</strong> using the helper function, and compute the new accuracy.</li>
+<li>Proceed to plot of accuracy with increasing number of bootstraps.</li>
+<li>Finally, use the helper code to plot the decision boundaries for varying <code>max_depth</code> along with <code>num_bootstraps</code>. Investigate the effect of increasing bootstraps on the variance.</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn-tree-decisiontreeclassifier" target="_blank">sklearn.tree.DecisionTreeClassifier()</a> : A decision tree classifier.</p>
+<p><a href="https://docs.scipy.org/doc//numpy-1.10.4/reference/generated/numpy.random.choice.html" target="_blank">np.random.choice</a> : Generates a random sample from a given 1-D array</p>
+<p><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.subplots.html" target="_blank">plt.subplots()</a> : Create a figure and a set of subplots.</p>
+<p><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.axes.Axes.plot.html" target="_blank">ax.plot()</a> : Plot y versus x as lines and/or markers</p>
+<p><strong>Note: This exercise is auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Bagging-Classification">Bagging Classification<a class="anchor-link" href="#Bagging-Classification">¶</a></h1>
 </div>
 </div>
@@ -1375,7 +1412,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Set your predictor variables(latitude &longitude;) as 'X' and response variable as y and make sure to use .values</span>
@@ -1390,7 +1427,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#split data in train an test, with test size = 0.2 and randomstate=44</span>
@@ -1403,7 +1440,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define the max_depth of your decision tree and set the random_state variable as 44</span>
@@ -1421,7 +1458,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Predict on the test set and calculate the accuracy of a single decision tree</span>
@@ -1436,7 +1473,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Complete the function below to get the prediction by bagging</span>
@@ -1492,7 +1529,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_bag_acc) ###         </span>
@@ -1516,7 +1553,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># To visualize, lets plot accuracy as a function of the number of trees in the Bagging</span>
@@ -1551,7 +1588,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># We will make plots for three different values of `max_depth`</span>

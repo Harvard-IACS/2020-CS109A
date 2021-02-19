@@ -1264,7 +1264,61 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: Back-propagation by hand</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The aim of this exercise is to perform back-propagation to update the weights of a simple neural network (shown below):</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><ul>
+<li>Get the predictor and response variables from the file backprop.csv and assign them to variables <code>x</code> and <code>y</code>.</li>
+<li>Build a forward pass of the above neural network with one hidden layer. You will build this neural network using <strong>numpy</strong> (no deep learning package allowed).</li>
+<li>Initialize the weights randomly with the random seed as 310, and make a prediction.</li>
+<li>Plot your neural net predictions with the true value.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image2.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Compute the mean_squared_error of your predictions with the actual values.</li>
+<li>Find the derivative of the loss function with respect to $w_1$.</li>
+<li>Find the derivative of the loss function with respect to $w_2$.</li>
+<li>Use the derivatives to update $w_1$ and $w_2$ .</li>
+<li>Use the updated weights to make a forward pass and compute new predictions.</li>
+<li>Plot the new predictions with the actual data. This will look similar to the one given above.</li>
+<li>Calculate your $MSE$ and compare with the earlier value.</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><h2 id="Loss-function:">Loss function:<a class="anchor-link" href="#Loss-function:">¶</a></h2>$$L\ =\ \frac{1}{n}\sum_1^n\left(y_{pred}-y_{true}\right)^2$$<h2 id="Activation-function:">Activation function:<a class="anchor-link" href="#Activation-function:">¶</a></h2>$$f\left(x\right)=\sin x$$<p><a href="https://matplotlib.org/3.3.1/api/_as_gen/matplotlib.pyplot.scatter.html" target="_blank">ax.plot()</a> : A scatter plot of y vs. x with varying marker size and/or colour.</p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html" target="_blank">np.exp()</a> : Calculates the exponential of all elements in the input array.</p>
+<p><a href="https://matplotlib.org/3.2.2/api/_as_gen/matplotlib.pyplot.xlabel.html" target="_blank">plt.xlabel()</a> : This is used to specify the text to be displayed as the label for the x-axis.</p>
+<p><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.ylabel.html" target="_blank">plt.ylabel()</a> : This is used to specify the text to be displayed as the label for the y-axis.</p>
+<p><strong>Note: This exercise is auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -1345,7 +1399,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the predictor and response variables </span>
@@ -1371,7 +1425,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_nn_mse) ###</span>
@@ -1446,7 +1500,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># In the update step, make sure to update the weights with their gradients</span>
@@ -1459,7 +1513,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the predictor and response variables </span>
@@ -1477,7 +1531,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_one_update_mse) ###</span>
@@ -1501,7 +1555,7 @@ In the below segment, use the method from above, and update the weight 300 times
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Reinitialize the weights to start again </span>
@@ -1514,7 +1568,7 @@ In the below segment, use the method from above, and update the weight 300 times
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Unlike the previous step, this time we will set a learning rate of 0.01 to avoid drastic updates and run the above code for 10000 loops</span>
@@ -1536,7 +1590,7 @@ In the below segment, use the method from above, and update the weight 300 times
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Plot your results and calculate the MSE </span>
@@ -1555,7 +1609,7 @@ In the below segment, use the method from above, and update the weight 300 times
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_mse) ###</span>
@@ -1580,7 +1634,7 @@ i.e <code>y = np.sin(a2) + 0.5</code> and rerun your code.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span> 

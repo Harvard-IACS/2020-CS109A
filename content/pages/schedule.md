@@ -1,12 +1,12 @@
 Title: Schedule
 Slug: schedule
-Date: 2021-02-11
+Date: 2021-02-19
 
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
 |-----|-----|-----|-----|-----|-----|
 |9/1||[Lecture 1: What is Data Science?  General introduction.]({filename}/lectures/lecture01/index.md)|[Lecture 2: Data + RegEx]({filename}/lectures/lecture02/index.md)||R:HW0|
-|9/7|No Lecture (Holiday)|[Lecture 3: Web Scraping + PANDAS]({filename}/lectures/lecture03/.ipynb_checkpoints/index-checkpoint.md)|[Lecture 4: Advanced PANDAS]({filename}/lectures/lecture04/index.md)||R:HW1 - D:HW0|
+|9/7|No Lecture (Holiday)|[Lecture 3: Web Scraping + PANDAS]({filename}/lectures/lecture03/index.md)|[Lecture 4: Advanced PANDAS]({filename}/lectures/lecture04/index.md)||R:HW1 - D:HW0|
 |9/14|[Lecture 5: kNN Regression and Linear Regression]({filename}/lectures/lecture05/index.md)|[Lecture 6: Multi and Poly Regression]({filename}/lectures/lecture06/index.md)|[Lecture 7:  Modeling knn and Linear R with skleanr]({filename}/lectures/lecture07/index.md)| |R:HW2 - D:HW1|
 |9/21|[Lecture 8: Basic Statistics for Data Science]({filename}/lectures/lecture08/index.md)|[Lecture 9: Inference: Bootstrap and CI]({filename}/lectures/lecture09/index.md)|[Lecture 10: Hypothesis Testing & Predictive CI]({filename}/lectures/lecture10/index.md)|[Advanced Section 1: Linear Algebra and Hypothesis Testing]({filename}/a-sections/a-section1/index.md)|R:HW3 - D:HW2|
 |9/28|[Lecture 11: Cross-Validation & Model Selection]({filename}/lectures/lecture11/index.md)|[Lecture 12: Regularization: Ridge & Lasso]({filename}/lectures/lecture12/index.md)|[Lecture 13: Estimation of regularization parameter;  Hands on]({filename}/lectures/lecture13/index.md)|[Advanced Section 2: Methods of regularization and their justifications]({filename}/a-sections/a-section2/index.md)| Milestone 1|

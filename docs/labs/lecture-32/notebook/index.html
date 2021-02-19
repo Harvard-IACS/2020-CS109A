@@ -1266,7 +1266,51 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: Early Stopping</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>The goal of this exercise is to understand early stopping. Early stopping is a method of avoiding overfitting, not exactly regularizing.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image2.png" style="width: 500px;" /></p>
+<p>NOTE: This graph is only a sample.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Instructions:">Instructions:<a class="anchor-link" href="#Instructions:">¶</a></h1><ul>
+<li>Generate the predictor and response data using the helper code given.</li>
+<li>Split the data into train and test sets.</li>
+<li>Visualise the split data using the helper code.</li>
+<li>Build a simple neural network with 5 hidden layers with 100 neurons each with the given pre-trained weights. This network has no regularization.</li>
+<li>Compile the model with MSE as the loss.</li>
+<li>Fit the model on the training data and save the history.</li>
+<li>Use the helper code to visualise the MSE of the train and test data with respect to the epochs.</li>
+<li>Predict on the entire data. </li>
+<li>Use the helper function to plot the predictions along with the generated data.</li>
+<li>Repeat steps 4 to 8 by building the same neural network with early stopping.</li>
+<li>The last plot will consist of the predictions of both the neural networks. The graph will look similar to the one given above.</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p>Use the Dense layer to regularize using l2 and l1 regularization. More details can be found <a href="https://keras.io/api/layers/regularizers/" target="_blank">here</a>.</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential" target="_blank">tf.keras.sequential()</a> : A sequential model is for a plain stack of layers where each layer has exactly one input tensor and one output tensor.</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/optimizers" target="_blank">tf.keras.optimizers()</a> : An optimizer is one of the two arguments required for compiling a Keras model</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense" target="_blank">model.add()</a> : Adds layers to the model.</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model#compile" target="_blank">model.compile()</a> : Compiles the layers defined into a neural network</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model" target="_blank">model.fit()</a> : Fits the data to the neural network</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model" target="_blank">model.predict()</a> : Used to predict the values given the model</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/History" target="_blank">history()</a> : The history object is returned from calls to the fit() function used to train the model. Metrics are stored in a dictionary in the history member of the object returned.</p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/regularizers/L2" target="_blank">tf.keras.regularizers.L2()</a> : A regularizer that applies a L2 regularization penalty.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -1455,7 +1499,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Building an unregularized NN with early stopping. </span>
@@ -1484,7 +1528,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use the keras early stopping callback with patience=10 while monitoring the loss</span>
@@ -1504,7 +1548,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Helper function to plot the data</span>
@@ -1527,7 +1571,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use the early stop implemented model above to predict for x_b (used exclusively for plotting)</span>
@@ -1545,7 +1589,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Use the helper code to plot the predicted data</span>

@@ -1273,6 +1273,25 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>For this exercise you will be working on a notebook in Ed to interpret various machine learning (ML) models: mostly a random forest and neural net model.  The steps of this notebook are:</p>
+<ol>
+<li>Read and wrangle the data (the <code>Heart.csv</code> data we have used before</li>
+<li>Fit 5 different ML models</li>
+<li>Calculate the default variable importance measures for the tree-based models</li>
+<li>Use <code>eli5</code> to calculate permutation importance measures.</li>
+<li>Interpret the models based on the plots of predictions (how does Age relate to AHD): both at the means of the other variables and for every observation in the training data set.</li>
+<li>Use <code>lime</code> to better understand how variables are related to the response for specific predictors.</li>
+</ol>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://eli5.readthedocs.io/en/latest/autodocs/permutation_importance.html" target="_blank">eli5.permutation_importance</a> : To get permutation importance metrics</p>
+<p><a href="https://lime-ml.readthedocs.io/en/latest/lime.html#module-lime.lime_tabular" target="_blank">lime.lime_tabular</a> : To get LIME explanations for a tabular data set like ours</p>
+<p>Note: This exercise is <strong>auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
@@ -2781,7 +2800,7 @@ True class: 0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># change the observation number and see what changes.</span>
@@ -2800,7 +2819,7 @@ True class: 0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### Plot the results</span>

@@ -1260,7 +1260,36 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise: B.1 - Gradient Descent</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>Find the minimum of this function</p>
+<p>The aim of this exercise is to implement gradient descent to <strong>try and find a local minimum</strong> in the function $\text{cos}(3\pi x)/x$ in the range $(0.1, 3)$, in other words, to obtain local convergence.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../img/image2.png" style="width: 500px;" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Set a <code>learning rate</code> between 1 and 0.001 and <code>max_iter</code> (maximum number of iterations) to a number between 5 and 50 . Then fill in the blanks to:</p>
+<ul>
+<li>Find the derivative, <code>delta</code>, of <code>f(x)</code> where <code>x = cur_x</code></li>
+<li>Update the current value of x, <code>cur_x</code></li>
+<li>Create the boolean expression has_converged that ends the algorithm if <code>True</code> </li>
+</ul>
+<p>You can experiment with how different values for <code>max_iter</code>, and <code>learning_rate</code> affect your results. Change the numbers in the <code>figsize()</code> so your figure grid is more visible.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">

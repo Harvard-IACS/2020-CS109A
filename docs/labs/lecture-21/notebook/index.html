@@ -1255,6 +1255,33 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise - Multi-class Classification and PCA</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><p>This exercise follows more like a lab and is broken into 3 parts (we will reconvene after each part).  The 3 parts are:</p>
+<ol>
+<li>Data set exploration and baseline models (graded)</li>
+<li>PCA and PCR (graded)</li>
+<li>Going Further with the dataset (not graded)</li>
+</ol>
+<h1 id="Learning-Goals">Learning Goals<a class="anchor-link" href="#Learning-Goals">¶</a></h1><p>In this lab, we will look at how to use PCA to reduce a dataset to a smaller number of dimensions. The goals are:</p>
+<ul>
+<li>Better Understand the multiclass setting</li>
+<li>Understand what PCA is and why it's useful</li>
+<li>Feel comfortable performing PCA on a new dataset</li>
+<li>Understand what it means for each component to capture variance from the original dataset</li>
+<li>Be able to extract the <code>variance explained</code> by components</li>
+<li>Perform modeling with the PCA components</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html" target="_blank">sklearn.accuracy_score</a> : Generates a Logistic Regression Model</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank">sklearn.LogisticRegression</a> : Generates a Logistic Regression Model</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html" target="_blank">sklearn.LogisticRegressionCV</a> : Uses CV to perform regularization in Logistic Regression</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html" target="_blank">sklearn.PCA</a> : Create a Principal Component Analysis (PCA) decomposition</p>
+<p><strong>Note: This exercise is auto-graded and you can try multiple attempts.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1><img src="https://raw.githubusercontent.com/Harvard-IACS/2018-CS109A/master/content/styles/iacs.png" style="float: left; padding-right: 10px; width: 45px" /> CS-109A Introduction to Data Science</h1>
 <h2 id="Lecture-21:-More-on-Classification-and-PCA">Lecture 21: More on Classification and PCA<a class="anchor-link" href="#Lecture-21:-More-on-Classification-and-PCA">¶</a></h2><p><strong>Harvard University</strong><br />
 <strong>Fall 2020</strong><br />
@@ -1976,7 +2003,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [0]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span> 

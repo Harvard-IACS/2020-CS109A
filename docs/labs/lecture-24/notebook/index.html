@@ -1262,7 +1262,24 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Title">Title<a class="anchor-link" href="#Title">¶</a></h1><p><strong>Exercise 2: Hyperparameter tuning</strong></p>
+<h1 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h1><h2 id="Tuning-the-hyperparameters">Tuning the hyperparameters<a class="anchor-link" href="#Tuning-the-hyperparameters">¶</a></h2><p>Random Forests perform very well out-of-the-box, with the pre-set hyperparameters in sklearn. Some of the tunable parameters are:</p>
+<ul>
+<li>The number of trees in the forest: <code>n_estimators</code>, int, default=100</li>
+<li>The complexity of each tree: stop when a leaf has <= <code>min_samples_leaf</code> samples </li>
+<li>The sampling scheme: number of features to consider at any given split: <code>max_features</code> {“auto”, “sqrt”, “log2”}, int or float, default=”auto”.</li>
+</ul>
+<h1 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">¶</a></h1><p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank">RandomForestClassifier()</a> : Defines the RandomForestClassifier and includes more details on the definition and range of values for its tunable parameters.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier.predict_proba" target="_blank">model.predict_proba(X)</a> : Predict class probabilities for X</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html" target="_blank">roc_auc(y_test, y_proba)</a> : Calculates the area under the receiver operating curve (AUC).</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" target="_blank">GridSearchCV()</a> : Performes exhaustive search over specified parameter values for an estimator.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">

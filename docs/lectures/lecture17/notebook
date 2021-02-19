@@ -1,0 +1,335 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Title\n",
+    "\n",
+    "**Exercise 1 - Regularization and Decision Boundaries in Logistic Regression**\n",
+    "\n",
+    "# Description\n",
+    "\n",
+    "The goal of the exercise is to produce a plot similar to the one given below, by performing classification predictions on a logistic regression model ."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<img src=\"../img/image.png\" style=\"width: 500px;\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Instructions: \n",
+    "- We are trying to predict who will have AHD based on Age and MaxHAR. To do so we need to:\n",
+    "- Read the `Heart.csv` as a data frame and split into train and test.\n",
+    "- Assign the predictor and response variables.\n",
+    "- Fit logistic regression models and interpret results\n",
+    "- Compute the accuracy of the model.\n",
+    "- Plot the classification boundaries against the two predictors\n",
+    "- Fit an untuned regularized logistic regression model and compare the classification boundary\n",
+    "\n",
+    "# Hints:\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html\" target=\"_blank\">sklearn.LogisticRegression()</a> : Generates a Logistic Regression classifier\n",
+    "\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.fit\" target=\"_blank\">sklearn.fit()</a> : Fits the model to the given data\n",
+    "\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.predict\" target=\"_blank\">sklearn.predict()</a> : Predict using the estimated model (Logistic or knn classifiers) to perform pure classification predictions\n",
+    "\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.predict_proba\" target=\"_blank\">sklearn.predict_proba()</a> : Predict using the estimated model (Logistic or knn classifiers) to perform probability predictions of all the classes in the response (they should add up to 1 for each observation)\n",
+    "\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html\" target=\"_blank\">sklearn.LogisticRegression.coef_ and .intercept_</a> : Pull off the estimated $\\beta$ coefficients in a Logistic Regression model\n",
+    "\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.score\" target=\"_blank\">sklearn.score()</a> : Accuracy classification score.\n",
+    "\n",
+    "<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html\" target=\"_blank\">sklearn.accuracy_score()</a> : Accuracy classification score\n",
+    "\n",
+    "<a href=\"https://matplotlib.org/3.3.2/api/_as_gen/matplotlib.pyplot.pcolormesh.html\" target=\"_blank\">matplotlib.pcolormesh()</a> : Accuracy classification score\n",
+    "\n",
+    "**Note: This exercise is auto-graded and you can try multiple attempts.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "import sklearn as sk\n",
+    "import matplotlib.pyplot as plt\n",
+    "%matplotlib inline\n",
+    "\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.linear_model import LogisticRegression\n",
+    "from sklearn.preprocessing import PolynomialFeatures"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "heart = pd.read_csv('Heart.csv')\n",
+    "\n",
+    "# Force the response into a binary indicator:\n",
+    "heart['AHD'] = 1*(heart['AHD'] == \"Yes\")\n",
+    "\n",
+    "print(heart.shape)\n",
+    "#heart.head()\n",
+    "heart.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "heart_train, heart_test = train_test_split(heart, test_size=0.3, random_state = 109)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q1.1** Below we fit an unregularized logistic regression model (`logit1`) to predict `AHD` from `Age` and `MaxHR` in the training set (with `penalty='none'`).  Print out the coefficient estimates, and interpret general trends."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "degree = 1\n",
+    "predictors = ['Age','MaxHR']\n",
+    "\n",
+    "X_train1 = PolynomialFeatures(degree=degree,include_bias=False).fit_transform(heart_train[predictors])\n",
+    "y_train = heart_train['AHD']\n",
+    "\n",
+    "\n",
+    "logit1 = LogisticRegression(penalty='none', max_iter = 5000).fit(X_train1, y_train)\n",
+    "\n",
+    "print(\"Logistic Regression Estimated Betas:\",\n",
+    "      logit1.___,logit1.___)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "*your interpretation here*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q1.1** Fit an unregularized 4th order polynomial (with interactions) logistic regression model (`logit4`) to predict `AHD` from `Age` and `MaxHR` in the training set (with `penalty='none'`).  Print out the coefficient estimates."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### edTest(test_logit4) ###\n",
+    "\n",
+    "degree = ___\n",
+    "predictors = ['Age','MaxHR']\n",
+    "\n",
+    "X_train4 = PolynomialFeatures(degree=degree,include_bias=False).fit_transform(___)\n",
+    "\n",
+    "logit4 = LogisticRegression(penalty='none', max_iter = 5000).fit(___)\n",
+    "\n",
+    "print(\"Logistic Regression Estimated Betas:\",\n",
+    "      logit4.___,logit4.___)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q1.2** Evaluate the models based on misclassification rate in both the test set. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### edTest(test_misclass) ###\n",
+    "\n",
+    "######\n",
+    "# your code here\n",
+    "######\n",
+    "\n",
+    "predictors = ['Age','MaxHR']\n",
+    "X_test1 = PolynomialFeatures(degree=1,include_bias=False).fit_transform(heart_test[predictors])\n",
+    "X_test4 = PolynomialFeatures(degree=4,include_bias=False).fit_transform(heart_test[predictors])\n",
+    "y_test = heart_test['AHD']\n",
+    "\n",
+    "# use logit.score()\n",
+    "misclass_logit1 = ___\n",
+    "misclass_logit4 = ___\n",
+    "\n",
+    "print(\"Overall misclassification rate in test for logit1:\",misclass_logit1)\n",
+    "print(\"Overall misclassification rate in test for logit4:\",misclass_logit4)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The code below performs the classification predictions for the model at all values in the range of the two predictors for `logit1`.  Then the predictions and the train dataset are added to a scatterplot in the second code chunk:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "n = 100\n",
+    "\n",
+    "x1=np.linspace(np.min(heart[['Age']]),np.max(heart[['Age']]),n)\n",
+    "x2=np.linspace(np.min(heart[['MaxHR']]),np.max(heart[['MaxHR']]),n)\n",
+    "x1v, x2v = np.meshgrid(x1, x2)\n",
+    "\n",
+    "# This is how we would typically do the prediction (have a vector of yhats)\n",
+    "#yhat10 = knn10.predict(np.array([x1v.flatten(),x2v.flatten()]).reshape(-1,2))\n",
+    "\n",
+    "# To do the predictions and keep the yhats on 2-D (to match the dummy predictor shapes), use this\n",
+    "X = np.c_[x1v.ravel(), x2v.ravel()]\n",
+    "X_dummy = PolynomialFeatures(degree=1,include_bias=False).fit_transform(X)\n",
+    "\n",
+    "\n",
+    "yhat1 = logit1.predict(X_dummy)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "plt.pcolormesh(x1v, x2v, yhat1.reshape(x1v.shape),alpha = 0.05) \n",
+    "plt.scatter(heart_train['Age'],heart_train['MaxHR'],c=heart_train['AHD'])\n",
+    "plt.ylabel(\"MaxHR\")\n",
+    "plt.xlabel(\"Age\")\n",
+    "plt.title(\"Yellow = Predicted to have AHD, Purple = Predicted to not have AHD\")\n",
+    "plt.colorbar()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Perform the same calculation above, but for the 4th order polynomial\n",
+    "\n",
+    "X_dummy = PolynomialFeatures(degree=4,include_bias=False).fit_transform(X)\n",
+    "yhat4 = logit4.predict(___)\n",
+    "\n",
+    "plt.pcolormesh(x1v, x2v, yhat4.reshape(x1v.shape),alpha = 0.05) \n",
+    "plt.scatter(heart_train['Age'],heart_train['MaxHR'],c=heart_train['AHD'])\n",
+    "plt.ylabel(\"MaxHR\")\n",
+    "plt.xlabel(\"Age\")\n",
+    "plt.title(\"Yellow = Predicted to have AHD, Purple = Predicted to not have AHD\")\n",
+    "plt.colorbar()\n",
+    "plt.show()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q1.3** Compare the two models above on how they create the classification boundary.  Which is more likely to be overfit?  How would regularization affect these boundaries?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "*your answer here*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q1.4** Fit a ridge-like Logistic Regression model with `C=0.0001` on the 4th order polynomial as before.  Compare this regularized model with the unregularized one by using the classification boundary."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### edTest(test_ridge) ###\n",
+    "\n",
+    "logit_ridge = LogisticRegression(___, max_iter = 5000).fit(___, ___)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "#yhat_ridge = logit_ridge.predict_proba(X_dummy)[:,1]\n",
+    "yhat_ridge = ___\n",
+    "\n",
+    "plt.pcolormesh(x1v, x2v, yhat_ridge.reshape(x1v.shape),alpha = 0.05) \n",
+    "plt.scatter(heart_train['Age'],heart_train['MaxHR'],c=heart_train['AHD'])\n",
+    "plt.ylabel(\"MaxHR\")\n",
+    "plt.xlabel(\"Age\")\n",
+    "plt.title(\"Yellow = Predicted to have AHD, Purple = Predicted to not have AHD\")\n",
+    "plt.colorbar()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "*your answer here*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

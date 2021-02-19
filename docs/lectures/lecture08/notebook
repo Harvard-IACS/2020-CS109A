@@ -1,0 +1,188 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Title\n",
+    "\n",
+    "**Exercise: 1 - Normal Distributions and Likelihood**\n",
+    "\n",
+    "# Description\n",
+    "\n",
+    "The goal of this exercise is to become comfortable with the normal distribution and the idea of the likelihood function.  This magnitude of the data is small so that you can focus on the understanding of the concepts.\n",
+    "\n",
+    "# Instructions\n",
+    "- Do a few probability and density calculations for a normal distribution\n",
+    "- Calculate and plot the likelihood of a sample of just 3 observations.\n",
+    "- Determine the Maximum Likelihood Estimates.\n",
+    "\n",
+    "# Hints:\n",
+    "\n",
+    "<a href=\"https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html\" target=\"_blank\">scipy.stats.norm.pdf()</a> : Evaluates the PDF of a normal distribution at a particular value of X\n",
+    "\n",
+    "<a href=\"https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html\" target=\"_blank\">scipy.stats.norm.cdf()</a> : Evaluates the CDF of a normal distribution to find: \n",
+    "$$P\\left(X\\le x\\right)$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "%matplotlib inline"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from scipy.stats import norm"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "(a) Let $X\\sim N(500,75^2)$.  Determine $P(X\\geq 600)$."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### edTest(test_norm_prob) ###\n",
+    "prob = 1-norm.cdf(___,___,___)\n",
+    "prob"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "(b) Plotting the normal distribution of $X\\sim N(500,75^2)$."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# define parameters\n",
+    "mu = ___\n",
+    "sigma = ___\n",
+    "\n",
+    "# the 'dummy' x for plotting\n",
+    "x = np.arange(200,800)\n",
+    "\n",
+    "# calculate the normal distribution at each value of x\n",
+    "prob = norm.pdf(___,mu,sigma)\n",
+    "\n",
+    "# plot it\n",
+    "plt.plot(___,___);\n",
+    "plt.title(r'$\\mathrm{N(\\mu=500, \\sigma^2=75^2)}$')\n",
+    "plt.ylim((0,0.006))\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question:** Does your answer to part (a) makes sense based on this curve?\n",
+    "\n",
+    "(c) Calculating simple likelihoods"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### edTest(test_likelihood) ###\n",
+    "# define the data set\n",
+    "x = [3,5,10]\n",
+    "\n",
+    "# sigma is known to be 2, an estimate for mu\n",
+    "# is what we need to determine. Consider \n",
+    "#the values (4, 4.01, 4.02, ..., 7.99).\n",
+    "sigma = 2\n",
+    "mu = np.arange(___,___,0.01)\n",
+    "\n",
+    "# calculate the likelihood\n",
+    "like = norm.pdf(x[0],mu,sigma)*___*___\n",
+    "\n",
+    "#plot it\n",
+    "plt.plot(mu,like,color=\"darkred\");\n",
+    "plt.title('Likelihood Function')\n",
+    "plt.xlabel(r'$\\mu$')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "(d) Determine the maximum likelihood estimate for $\\mu$."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### edTest(test_mle) ###\n",
+    "# determine which value of mu aligns with where \n",
+    "# the maximum of the likelihood function is\n",
+    "mle = ___[np.argmax(__)]\n",
+    "mle"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Question:** How would you numerically maximize this function if both the mean and variance were unknown?  How would you visualize the likelihood function?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
