@@ -16,14 +16,16 @@
   {
    "cell_type": "markdown",
    "metadata": {
+    "collapsed": false,
     "jupyter": {
      "outputs_hidden": false
     },
     "pycharm": {
-     "name": "#%%\n"
+     "name": "#%% md\n"
     }
    },
    "source": [
+    "\n",
     "<img src=\"../img/plot.png\" style=\"width: 500px;\">"
    ]
   },
