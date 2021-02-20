@@ -1,5 +1,3 @@
-
-
 def RandomUniverse(df):
-    df_bootstrap = df.sample(len(df), replace = True)
+    df_bootstrap = df.sample(len(df), replace=True)
     return df_bootstrap
