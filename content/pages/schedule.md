@@ -1,6 +1,6 @@
 Title: Schedule
 Slug: schedule
-Date: 2021-02-19
+Date: 2021-02-20
 
 
 |Date (Mon)|Lecture (Mon)|Lecture (Wed)|Lecture (Fri)|Advanced Section (Wed)|Assignment (R:Released Wed - D:Due Wed)|
