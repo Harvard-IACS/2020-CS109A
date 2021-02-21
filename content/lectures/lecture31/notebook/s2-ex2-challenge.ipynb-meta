@@ -1,6 +1,6 @@
 Title: Lecture 31: Neural Networks 4 -Back Propagation, SGD
-Category: labs
-Slug: lecture-31/notebook-2
+Category: Lectures
+Slug: lecture31/notebook-2
 Author: Pavlos Protopapas
 Date: 2020-11-16
 Tags: Gradient Descent, Stochastic Gradient Descent, Back Propagation, Optimizers
