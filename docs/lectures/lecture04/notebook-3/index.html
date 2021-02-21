@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="FALL 2020 - Harvard University, Institute for Applied Computational Science.     Lecture 4: EDA + PANDAS"
+    />
+    <meta name="author" content="Pavlos Protopapas" />
+<meta
+  name="keywords"
+  content="eda, pandas"
+/>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../../style/tipuesearch/tipuesearch.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../../style/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="../../../style/css/iacs.css" />
+
+    <title>Harvard CS109A | Lecture 4: EDA + PANDAS</title>
+
+    <style>
+      .navbar {
+        background-color: #c90016
+      }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" href="../../..">
+      <img
+        class="navbar-brand-logo"
+        src="../../../style/images/logo.png"
+      />
+      <h3 class="course-title">CS109A</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsDefault"
+      aria-controls="navbarsDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/syllabus.html">Syllabus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/materials.html">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/faq.html">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../pages/preparation.html">Preparing for this course</a>
+        </li>
+        <form
+          class="form-inline my-2"
+          action="../../../search.html"
+          onsubmit="return validateForm(this.elements['q'].value);"
+        >
+          <div class="input-group input-group-sm">
+            <input
+              class="form-control"
+              type="text"
+              name="q"
+              placeholder="Search Topic"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+    <!-- .collapse navbar-collapse -->
+  </div>
+  <!-- .container -->
+</nav>
+    <main id="content" class="container">
+ <div>
+  <div class="float-left">
+    <p>
+      Key Word(s):       <a href="../../../pages/materials.html#eda"
+        >eda</a
+      >,       <a href="../../../pages/materials.html#pandas"
+        >pandas</a
+      >     </p>
+  </div>
+  <div class="float-right">
+    <a href="../../../lectures/lecture04/notebook/Lecture4_Ex2_solutions.ipynb">
+      Download Notebook <i class="fas fa-download"></i>
+    </a>
+  </div>
+</div>
+<hr />
+<div class="container article">
+<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1><img src="https://raw.githubusercontent.com/Harvard-IACS/2018-CS109A/master/content/styles/iacs.png" style="float: left; padding-right: 10px; width: 45px" /> CS109A Introduction to Data Science</h1>
+<h2 id="Lecture-4,-Exercise-2:-EDA-and-Advanced-PANDAS">Lecture 4, Exercise 2: EDA and Advanced PANDAS<a class="anchor-link" href="#Lecture-4,-Exercise-2:-EDA-and-Advanced-PANDAS">¶</a></h2><p><strong>Harvard University</strong><br />
+<strong>Fall 2020</strong><br />
+<strong>Instructors</strong>: Pavlos Protopapas, Kevin Rader, and Chris Tanner</p>
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.width'</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_columns'</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="NOTE:-After-running-every-cell,-be-sure-to-auto-grade-your-work-by-clicking-'Mark'-in-the-lower-right-corner.-Otherwise,-no-credit-will-be-given."><strong>NOTE</strong>: After running every cell, be sure to auto-grade your work by clicking 'Mark' in the lower-right corner. Otherwise, no credit will be given.<a class="anchor-link" href="#NOTE:-After-running-every-cell,-be-sure-to-auto-grade-your-work-by-clicking-'Mark'-in-the-lower-right-corner.-Otherwise,-no-credit-will-be-given.">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Advanced-PANDAS">Advanced PANDAS<a class="anchor-link" href="#Advanced-PANDAS">¶</a></h2><p>We will use the same <code>top50.csv</code> file from Exercise 1.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, fill in the blank to create a new PANDAS DataFrame from the <code>top50.csv</code> file.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_a) ###</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">_____</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Run the cell below to print the summary statistics and display the column names</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fill in the blank to set <code>longest_song</code> equal to the <code>TrackName</code> of the longest song (the song that has the highest <code>Length</code> value)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_b) ###</span>
+<span class="n">longest_song</span> <span class="o">=</span> <span class="n">__________</span>
+<span class="n">longest_song</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fill in the blank to set <code>loud_song</code> equal to the <code>TrackName</code> of the song that has the highest <code>Loudness</code> value amongst the 10 most popular songs. To be clear, by highest we mean the least negative. So, we would say that -2 is louder than -10.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_c) ###</span>
+<span class="n">loud_song</span> <span class="o">=</span> <span class="n">_______________</span>
+<span class="n">loud_song</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Say you are interested in songs that last 3-4 minutes, anything shorter doesn't have time to build up a narrative, and anything longer gets boring. You have a very particular taste but are open to listening to what other people are listening to a lot, but you don't even know what genre that is!</p>
+<p>Fill in the blank below (or use multiple lines if you prefer) to set <code>new_genre</code> to be the genre that is associated with the most songs that are between 3 and 4 minutes in duration (including songs that are exactly 3 minutes and 4 minutes).</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_d) ###</span>
+<span class="n">new_genre</span> <span class="o">=</span> <span class="n">____________________</span>
+<span class="n">new_genre</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, fill in the blank to make a new DataFrame <code>genre_counts</code> that groups all songs by their Genre and aggregates all other columns by their <strong>median value</strong>. Then, sort by their <code>Popularity</code> (in ascending order).</p>
+<p>As an example, if <code>df</code> had only 3 "pop" songs, and their <code>Danceability</code> values were 70,82, and 90, and <code>df</code> also contained 5 "latin" songs, and their <code>Danceability</code> values were 80,82,90,91,99. Then <code>genre_counts</code> would have 1 row for the Genre "pop", with a Danceability value of 82. <code>genre_counts</code> would also have 1 row for the Genre "latin", with a Danceability value of 90. Then, we'd sort the DataFrame by the <code>Popularity</code> (in ascending order).</p>
+<p>For example, your DataFrame should look as follows (snippet):
+<img src="https://github.com/Harvard-IACS/2020-CS109A/blob/master/content/lectures/lecture04/images/sorted_pandas.png?raw=true" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_e) ###</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">_______________</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, fill in the blank to set the variable <code>speechy_song</code> to the <code>TrackName</code> of the song that has the highest <code>Speechiness</code> value</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### edTest(test_f) ###</span>
+<span class="n">speechy_song</span> <span class="o">=</span> <span class="n">_______________</span>
+<span class="n">speechy_song</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="END-OF-GRADED-SECTION">END OF GRADED SECTION<a class="anchor-link" href="#END-OF-GRADED-SECTION">¶</a></h1><h1 id="EXTRA-EXAMPLES-FOLLOW:">EXTRA EXAMPLES FOLLOW:<a class="anchor-link" href="#EXTRA-EXAMPLES-FOLLOW:">¶</a></h1><h3 id="Combining-multiple-DataFrames">Combining multiple DataFrames<a class="anchor-link" href="#Combining-multiple-DataFrames">¶</a></h3><p>As mentioned, often times one dataset doesn't contain all of the information you are interested in -- in which case, you need to combine data from multiple files. This also means you need to verify the accuracy (per above) of each dataset.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>spotify_aux.csv</code> contains the same 50 songs as <code>top50.csv</code>; however, it only contains 3 columns:</p>
+<ul>
+<li>Track Name</li>
+<li>Artist Name</li>
+<li>Explicit Language (boolean valued)</li>
+</ul>
+<p>Note, that 3rd column is just random Boolean values, but pretend as if it's correct. The point of this section is to demonstrate how to merge columns together.</p>
+<p>Let's load <code>spotify_aux.csv</code> into a DataFrame:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">explicit_lyrics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"spotify_aux.csv"</span><span class="p">)</span>
+<span class="n">explicit_lyrics</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's merge it with our <code>df</code> DataFrame that is storing <code>top50.csv</code>.</p>
+<p><code>.merge()</code> is a Pandas function that stitches together DataFrames by their columns.</p>
+<p><code>.concat()</code> is a Pandas function that stitches together DataFrames by their rows (if you pass axis=1 as a flag, it will be column-based)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 'on='' specifies the column used as the shared key</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">explicit_lyrics</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'TrackName'</span><span class="p">)</span>
+<span class="n">df_combined</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We see that all columns from both DataFrames have been added. That's nice, but having duplicate ArtistName and TrackName is unecessary. Since <code>merge()</code> uses DataFrames as the passed-in objects, we can simply pass merge() a stripped-down copy of <em>ExplicitLanguage</em>, which helps merge() not add any redundant fields.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_combined2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">explicit_lyrics</span><span class="p">[[</span><span class="s1">'TrackName'</span><span class="p">,</span> <span class="s1">'ExplicitLanguage'</span><span class="p">]],</span> <span class="n">df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'TrackName'</span><span class="p">)</span>
+<span class="n">df_combined2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You'll notice we don't have the same number of rows as our original <code>df</code> DataFrame.</p>
+<p><strong>Why is that? What happened? How can we quickly identify which rows are missing -- especially if our dataset had thousands of rows. Discuss with your group.</strong></p>
+<p>Related to merge, are the useful functions:</p>
+<ul>
+<li><code>concat()</code></li>
+<li><code>aggregate()</code></li>
+<li><code>append()</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Plotting-DataFrames">Plotting DataFrames<a class="anchor-link" href="#Plotting-DataFrames">¶</a></h3><p>As a very simple example of how one can plot elements of a DataFrame, we turn to Pandas' built-in plotting:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Danceability'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Popularity'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'DarkBlue'</span><span class="p">)</span>
+<span class="n">scatter_plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><matplotlib.axes._subplots.axessubplot at 0x133041090></pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_png output_subarea">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX4AAAEGCAYAAABiq/5QAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4xLjEsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy8QZhcZAAAbZElEQVR4nO3df5RkZX3n8fenu+nMDGH4MTScEZxuDASHsGGUdkQUj8JMQMMBzaqh3aghHcZsgoJu1iWbE1n2bPboimLEE7MjPYQk2iqsnLhsloGwmkU4genBEQZbNEqDkHaoIDYu09ozPd/9496W7p7q6Tvddatu3ft5nVOnq56quvV96se3bz31fZ6riMDMzKqjo9UBmJlZcznxm5lVjBO/mVnFOPGbmVWME7+ZWcV0tTqALI4//vjo6+trdRhmZm1l586d/xIRPfPb2yLx9/X1MTIy0uowzMzaiqQn6rV7qMfMrGKc+M3MKsaJ38ysYpz4zcwqxonfzKxick38kq6StFvSo5KuTtv+k6SnJe1KT2/OMwYzy65W28uOHePUantbHYrlKLdyTklnAlcAG4Ep4E5Jd6RX3xAR1+f12GZ2+IaHRxkc3E53dwdTUwcYGrqQgYH1rQ7LcpDnHv964IGI2BsR+4F/AH4jx8czsyWq1fYyOLidycn9TExMMTm5n8HB7d7zL6k8E/9u4DxJayStAt4MvDS97kpJD0vaJunYeneWtEXSiKSRWq2WY5hmNjY2QXf33HRwxBEdjI1NtCgiy1NuiT8iRoGPAncBdwK7gGngM8AvARuAceDjC9x/a0T0R0R/T89BM47NrIH6+o5maurAnLZ9+w7Q13d0iyKyPOX6425EDEXE2RHxeuA54DsRsScipiPiAPBZkt8AzKyFenpWMTR0IStXdrF6dTcrV3YxNHQhPT2rWh2a5SDXtXoknRARz0haRzK+f46ktRExnt7krSRDQmbWYgMD69m0qZexsQn6+o520i+xvBdp+x+S1gD7gD+IiB9LulHSBiCAMeC9OcdgZhn19Kxywq+AXBN/RJxXp+1deT6mWSPVanu9B2yl45m7ZgsYHh6lt3crmzffSm/vVoaHR1sdkllDOPGb1eG6diszJ36zOlzXbmXmxG9Wh+varcyc+M3qcF27lVlbHHPXrBVc125l5cRvdgiua7cy8lCPWU68tr0VlRO/WQ48B8CKzInfrME8B8CKzonfrME8B8CKzonfrME8B8CKzonfrME8B8CKzuWcZjnwHAArMid+s5x4DoAVlYd6zKypGj2/oejbKyInfjNrmkbPbyj69opKEdHqGBbV398fIyMjrQ7DzJahVttLb+9WJif3/7xt5counnhiy5KGxIq+vSKQtDMi+ue3e4/fzJqi0fMbir69InPiN7OmaPT8hqJvr8ic+M2sKRo9v6Ho2ysyj/GbWVPVansbOr+h6NtrpYXG+F3Hb2ZN1ej5DUXfXhF5qMesArLWpjfjdlnblqMKtfjL4T1+s5IbHh5lcHA73d0dTE0dYGjoQgYG1rfkdkCmtnrba3R/q8xj/GYllrU2vRm3W7GiE0kH3Tci+OlPpw+5vUb3typcx29WQVlr05txu85O0dGhOW0dHaKzc26ba/Hz56EesxLLWpvejNtNTweam+M5cCCYP+rgWvz8eY/frMSy1qY343bbtl1U977btl3kWvwm8xi/WQVkrU1vxu2yti1HmWrxl2OhMX4nfjOzkmrJj7uSrpK0W9Kjkq5O246TdLek76Z/j80zBmsN11HbQho9V8AOX26JX9KZwBXARuAs4GJJpwLXAPdExGnAPellK5GqrGluhy/re8PvoXzlNtQj6e3ARRExmF7+E+BnwCDwhogYl7QW+FpEnH6obXmop324jtoW0ui5Ara4Vgz17AbOk7RG0irgzcBLgRMjYjy9zQ+BE+vdWdIWSSOSRmq1Wo5hWiO5jtoW0ui5ArZ0uSX+iBgFPgrcBdwJ7AKm590mgLpfOSJia0T0R0R/T09PXmFag7mO2hbS6LkCtnS5/rgbEUMRcXZEvB54DvgOsCcd4iH9+0yeMVhzuY7aFtLouQK2dLmWc0o6ISKekbSOZM//HOCPgWcj4iOSrgGOi4gPHWo7HuNvP66jtoU0eq6ALawldfyS7gXWAPuAD0bEPZLWAF8C1gFPAO+IiB8dajtO/GZmh68lB2KJiPPqtD0LXJDn45q1u0bPjG2GZsy+HR19lgcfHGfjxrWsX7+mabGUjRdpMyuYRq9334y16Bu9Bn697d1//9N8+tO7fn6bK6/cwI03bso9ljLykg1mBbLcWvdGrm3f6JiXs70VKzrn9GvGt751+Zw9f88BmMvr8Zu1geXUujd6bfusGl13X297mr+ec+rBB8fnXPYcgGw81GNWIMupdW/02vZZNbruvt72FhqZ2Lhxba6xlJX3+M0KZLm17o1c277RMS9ne9u2XcSVV26Yc7srr9xw0A+8ngOQjcf4zQrIVT2u6mkEr8dvZlYx/nHXCqkd11wvUsz1Yska3+jos9xyy25GR5/NO8y21+jXvNXvIf+4ay3TjvXWRYp5OXX873vf32eqibfmzFFo9nvIQz3WEu1Yb12kmBeqdZe0aHyjo89yxhk3H7TN+TXx1pw5Cnm+hzzUY4XSjvXWRYq5XiydnaKjY/E6/vm174u1V1kz5ii04j3koR5riXasty5SzPVimZ4O5s9zqhff/Nr3xdqrrBlzFFrxHvIev7VEO9ZbFynmhWrds8S3fv2aTDXx1pw5Cq14D3mM31qqHeutixTzcur4s9bEW3PmKOTBdfxmZhXjH3fNFtHq2up2spz5A9b658o/7ppRjNrqdlGk4wC0oyK81zzUY5VXpPr8oivScQDakev4zQqiKLXV7aBIxwFoR0V5r3moxyqvKLXV7aBIxwFoR0V5r3mP3yqvKLXV7aBIxwFoR0V5r3mM3yxVpPr8oivScQDaUavr+D3UY5bq6VlVmIRV9CRa77kq0vOXVaue51Y/Vx7qMSuY4eFRenu3snnzrfT2bmV4eLTVIZVSlZ9nD/WYFYhLS5ujKs+zyznN2kBRyv3KrurPsxO/WYEUpdyv7Kr+PDvxmxVIUcr9yq7qz7PH+M0KqOhVPWVR9ufZ5ZxmbaTV5X5VUdXnOdNQj6TOpWxc0gckPSppt6RhSSsk/aWkxyXtSk8bFt+SzdfqZV3NrH1lHeP/rqSPSToj64YlnQS8H+iPiDOBTuCy9Op/HxEb0tOuwwvZqlx/bGbLlzXxnwV8B7hJ0j9K2iJpdYb7dQErJXUBq4B/XmKclqrV9jI4uJ3Jyf1MTEwxObmfwcHt3vM3s8wyJf6I+ElEfDYizgX+A3AtMC7pFkmnLnCfp4HrgSeBcWAiIu5Kr/5TSQ9LukHSL9S7f/rPZUTSSK1WO9x+lVbV64/NbPkyj/FLukTS7cAngY8DLwP+J/B3C9znWOBS4BTgJcCRkn4L+CPg5cCrgONI/pEcJCK2RkR/RPT39PQcXq9KrOr1x2a2fJnH+EmS+Mci4hUR8YmI2BMRtwF3LnCfTcDjEVGLiH3Al4FzI2I8Ej8DbgY2LrcTVVL1+mMzW76s5Zzvjoivz26Q9NqIuC8i3r/AfZ4EzpG0CpgELgBGJK2NiHFJAt4C7F5q8FU1MLCeTZt6S11/bGb5yZr4PwW8cl7bjXXafi4iHpB0G/AQsB/4BrAV+N+SegABu4DfO9ygrbr1x2a2fIdM/JJeA5wL9Ej64KyrVpOUZx5SRFxL8kPwbOcfbpBLVfZZeWZWXxk++3n2YbEx/m7gF0n+QRw16/Q88LaGRtJgrnU3q6YyfPbz7kOmtXok9UbEEw195MNwuGv1VGWtbTObqwyf/Ub2YUnr8Uv6ZHr205K+Mv90WBE0kWvdzaqpDJ/9ZvRhsR93/zr9e33DHrEJXOtuVk1l+Ow3ow+H3OOPiJ3pAm1bIuIf5p8aFkWDudbdrJrK8NlvRh+yjvF/HTg/IqYa9siHYanr8Zfhl30zO3xl+Ow3og/LXY//+8B96bj+CzONEfGJJUXTJK51N6umMnz28+xD1sT/vfTUQVLOaWbWVurtQZfhm8FSZEr8EXFd3oGYmeVleHiUwcHtdHd3MDV1gKGhCwEOahsYWN/iSJsj6xh/D/Ah4FeAFTPtEdGUWbg+5q6ZLVW9uvgVKzqR1Nb1/lksqY5/ls8B3yZZYvk6YAzY0bDozMxyUq8uvrNTdHRoTlu71fsvR9bEvyYihoB9aSnn79DENXfMzJaqXl389HRw4MDc0Y52q/dfjqyJf1/6d1zSr0t6BclBVMzMCq1eXfy2bRe1fb3/cmQd478YuBd4KclyzKuB6yKiKcs2eIzfzJarilU9y6rjj4g70rMTwBsbGZiZWTPUq4svQ73/Uiy2Hv+NwIJfCQ5x9C0za0PN2AMu+152O1hsj9/jK2YVUa/WvdF17c14DFtcpjH+VvMYv1m+mrGOfRnWym83yxrjl/RV6gz5NGsCl5nla6bWfXLyxbaZuvZGJeVmPIZlk3Wtnj+cdX4F8K9JDqBuZiXQjDXgy7BWfllkquOPiJ2zTvdFxAeBN+Qbmpk1SzPWgC/DWvllkbWOf/ZkrQ7gbOBTEXF6XoHN5jF+s+ZwVU+5LHc9/p0kY/wiGeJ5HBhsXHhmVgTNqGuvau18kWSdwHVK3oGYmVlzZK3qWQH8PvA6kj3/e4G/iIif5hibmZnlIOtQz18BPyFZpwfgncBfA2/PIygzM8tP1sR/ZkScMevyVyV9K4+AzMwsX1mXZX5I0jkzFyS9Gi/nYGbWlrLu8Z8N3C/pyfTyOuAxSY8AERG/mkt0ZmbWcFkT/0W5RmFmZk2TtZzzCUlnAeelTfdGxDfzC8vMzPKSaYxf0lUkB1w/IT39jaT3ZbjfByQ9Kmm3pGFJKySdIukBSf8k6YuSupfXBTOzfNVqe9mxY5xabW+rQ2mIrD/uDgKvjogPR8SHgXOAKw51B0knAe8H+iPiTKATuAz4KHBDRJwKPIdnAJtZgQ0Pj9Lbu5XNm2+lt3crw8OjrQ5p2bImfgHTsy5Pp22L6QJWSuoCVgHjwPnAben1twBvyRiDmVlT1Wp7GRzczuTkfiYmppic3M/g4Pa23/PP+uPuzcADkm5PL78FGDrUHSLiaUnXA08Ck8BdJGv+/DgiZpZ0fgo4qd79JW0BtgCsW7cuY5hmZo1T1mMIZF2W+RPA5cCP0tPlEfHJQ91H0rHApcApwEuAIzmM6qCI2BoR/RHR39PTk/VuZmYNU9ZjCCx2sPUVwO8BpwKPAH8+a299MZuAxyOilm7ry8BrgWMkdaXbORl4eqnBm5nlaeYYAoOD2zniiA727TtQimMILDbUcwuwj2RRtjcB64GrM277SeAcSatIhnouIJnt+1XgbcAXgPcAf3v4YZuZNcfAwHo2beot1TEEFkv8Z0TEvwKQNAQ8mHXDEfGApNuAh0jW8P8GsBX4X8AXJP2XtO2QvxWYmbVa2Y4hsFji3zdzJiL2S1kKeV4UEdcC185r/j6w8bA2ZGal5qNyNddiif8sSc+n50VSmvl8ej4iYnWu0ZlZ6Q0PjzI4uJ3u7g6mppIx9IGB9a0Oq9QOWdUTEZ0RsTo9HRURXbPOO+mb2bKUtU6+6LJO4DIza7iZOvnZZurkLT9O/GbWMmWtky86J34za5mZOvmVK7tYvbqblSu7SlEnX3RZl2wwM8tFGevki86J38xarmx18kXnoR4zq4Syram/HE78ZlZ6ZVxTfzmc+M2s1DxX4GBO/GZWap4rcDAnfjMrNc8VOJgTv5mVmucKHMzlnGZWep4rMJcTv5lVgucKvMhDPWZmFePEb2ZWMU78ZmYV48RvZlYxTvxmZhXjxG9mVjFO/GZmFePEb2ZWMU78ZmYV48RvZlYxTvxmZhXjxG9mVjFO/GZmFePEb2ZWMU78ZmYVk9t6/JJOB744q+llwIeBY4ArgFra/h8j4u/yisPMzObKLfFHxGPABgBJncDTwO3A5cANEXF9Xo9tZmYLa9ZQzwXA9yLiiSY9npmZLaBZif8yYHjW5SslPSxpm6Rj691B0hZJI5JGarVavZuYmdkS5J74JXUDlwC3pk2fAX6JZBhoHPh4vftFxNaI6I+I/p6enrzDNDOrjGbs8b8JeCgi9gBExJ6ImI6IA8BngY1NiMHMzFLNSPwDzBrmkbR21nVvBXY3IQYzM0vlVtUDIOlIYDPw3lnN/03SBiCAsXnXmZlZznJN/BHxArBmXtu78nxMMzM7NM/cNTOrGCd+M7OKceI3M6sYJ34zs4px4jczqxgnfjOzinHiNzOrGCd+M7OKceI3M6sYJ34zs4px4jczqxgnfjOzinHiNzOrGCd+M7OKceI3M6sYJ34zs4px4jczqxgnfjOzinHiNzOrGCd+M7OKceI3M6sYJ34zs4px4jczqxgnfjOzinHiNzOrGCd+M7OKceI3M6sYJ34zs4px4jczqxgnfjOzinHiNzOrmNwSv6TTJe2adXpe0tWSjpN0t6Tvpn+PzSsGM1tYrbaXHTvGqdX2tjoUa7LcEn9EPBYRGyJiA3A2sBe4HbgGuCciTgPuSS+bWRMND4/S27uVzZtvpbd3K8PDo60OyZqoWUM9FwDfi4gngEuBW9L2W4C3NCkGMyPZ0x8c3M7k5H4mJqaYnNzP4OB27/lXSLMS/2XAcHr+xIgYT8//EDix3h0kbZE0ImmkVqs1I0azShgbm6C7e+5H/4gjOhgbm2hRRNZsuSd+Sd3AJcCt86+LiACi3v0iYmtE9EdEf09PT85RmlVHX9/RTE0dmNO2b98B+vqOblFE1mzN2ON/E/BQROxJL++RtBYg/ftME2Iws1RPzyqGhi5k5couVq/uZuXKLoaGLqSnZ1WrQ7Mm6WrCYwzw4jAPwFeA9wAfSf/+bRNiMLNZBgbWs2lTL2NjE/T1He2kXzG5Jn5JRwKbgffOav4I8CVJg8ATwDvyjMHM6uvpWeWEX1G5Jv6IeAFYM6/tWZIqHzMzawHP3DUzqxgnfjOzinHiNzOrGCd+M7OKUTKHqtgk1UgqgBrleOBfGri9VnE/isX9KJYy9GO5feiNiINmwLZF4m80SSMR0d/qOJbL/SgW96NYytCPvPrgoR4zs4px4jczq5iqJv6trQ6gQdyPYnE/iqUM/cilD5Uc4zczq7Kq7vGbmVWWE7+ZWcWUPvFLWiHpQUnflPSopOvS9lMkPSDpnyR9MT1gTKFJ6pT0DUl3pJfbsQ9jkh6RtEvSSNp2nKS7JX03/Xtsq+NcjKRjJN0m6duSRiW9pt36Ien09HWYOT0v6ep26weApA+kn+/dkobTz307fj6uSvvwqKSr07aGvx6lT/zAz4DzI+IsYANwkaRzgI8CN0TEqcBzwGALY8zqKmD2UbHbsQ8Ab4yIDbPqk68B7omI04B70stF92fAnRHxcuAsktelrfoREY+lr8MG4GxgL3A7bdYPSScB7wf6I+JMoJPkcK9t9fmQdCZwBbCR5D11saRTyeP1iIjKnIBVwEPAq0lmw3Wl7a8Btrc6vkViPzl90c8H7gDUbn1I4xwDjp/X9hiwNj2/Fnis1XEu0oejgcdJiyPatR/zYv814L527AdwEvAD4DiSpebvAC5st88H8HZgaNblPwE+lMfrUYU9/pkhkl0kh3m8G/ge8OOI2J/e5CmSN0+RfZLkTTBzsNQ1tF8fIDnG8l2SdkrakradGBHj6fkfAie2JrTMTgFqwM3p0NtN6UGH2q0fs13Gi0fKa6t+RMTTwPXAk8A4MAHspP0+H7uB8yStkbQKeDPwUnJ4PSqR+CNiOpKvsyeTfI16eYtDOiySLgaeiYidrY6lAV4XEa8kORbzH0h6/ewrI9mtKXqNcRfwSuAzEfEK4AXmff1uk34AkI59XwLcOv+6duhHOuZ9Kck/5JcARwIXtTSoJYiIUZLhqbuAO4FdwPS82zTk9ahE4p8RET8Gvkryte8YSTNHIDsZeLplgS3utcAlksaAL5AM9/wZ7dUH4Od7Z0TEMyTjyRuBPZLWAqR/n2ldhJk8BTwVEQ+kl28j+UfQbv2Y8SbgoYjYk15ut35sAh6PiFpE7AO+TPKZacfPx1BEnB0Rryf5XeI75PB6lD7xS+qRdEx6fiXJMYBHSf4BvC29WaEP+h4RfxQRJ0dEH8lX8v8TEf+GNuoDJMdglnTUzHmSceXdwFdI4oc26EdE/BD4gaTT06YLgG/RZv2YZYAXh3mg/frxJHCOpFWSxIuvR1t9PgAknZD+XQf8BvB5cng9Sj9zV9KvAreQ/NLfAXwpIv6zpJeR7D0fB3wD+K2I+FnrIs1G0huAP4yIi9utD2m8t6cXu4DPR8SfSloDfAlYR7L89jsi4kctCjMTSRuAm4Bu4PvA5aTvL9qrH0eSJM6XRcRE2taOr8d1wG8C+0k+C79LMqbfNp8PAEn3kvx+tw/4YETck8frUfrEb2Zmc5V+qMfMzOZy4jczqxgnfjOzinHiNzOrGCd+M7OKceK3UpA0na4w+Wi6Euu/k9TS97ekPkm7F7juJklnpOfHJB2fnr9/1n3f2bxorUq6Fr+JWVuYTJflmJkE83lgNXBtS6NaQET87gLt56Zn+4B3kvTDrKG8x2+lky4HsQW4Uok+SfdKeig9nQvJZDhJX5u1rv7n0pmfSHqVpPvTbw8PSjoqXezvY5J2SHpY0nvT2/6ipHvSbT8i6dJZ4XSl2x1NH2dVep+vSeqfFzqS/l969iMkC3btStea/7/ppLGZ231d0lm5PIFWet7jt1KKiO9L6gROIFnbZHNE/FTSaSTLE8wk3VcAvwL8M3Af8FpJDwJfBH4zInZIWg1MkqznPhERr5L0C8B9ku4iWRL4rRHxfDpk84+SvpJu/3RgMCLuk7QN+H2SlSQXcw3pDG0AST8Cfhu4WtIvAysi4pvLeIqswrzHb1VwBPBZSY+QrEB5xqzrHoyIpyLiAMlqiH0kyXo8InYARMTz6fK+vwa8O13i+wGSqfWnkRwb4b9Kehj4e5KlAmaWzv1BRNyXnv8b4HVL7MOtJAfmOAL4HeAvl7gdM+/xWzml6wJNk+ztXwvsITmqUQfw01k3nb12yzSH/kwIeF9EbJ/3WL8N9ABnR8S+dBXVFenV89dEWdIaKRGxV9LdJMsPv4PkiFlmS+I9fisdST3AXwCfTtcvP5pkD/4A8C6SBfsO5TFgraRXpds7Kl3edzvwb9O9biT9crrI2dEkx0vYJ+mNQO+sba2T9Jr0/DuBr2fsxk+Ao+a13QR8CtgREc9l3I7ZQZz4rSxWzpRzkgy33AVcl17358B7JH2T5CA8LxxqQxExRbLS443pfe4m2YO/iWS534fSMs3/TvIN4XNAfzqU9G7g27M29xjJAWdGgWOBz2Tsz8PAdPrj8gfSuHYCzwM3Z9yGWV1endOsTUh6CfA14OXptxezJfEev1kbkPRukh+U/9hJ35bLe/xmZhXjPX4zs4px4jczqxgnfjOzinHiNzOrGCd+M7OK+f/Nv3V9NnfUoAAAAABJRU5ErkJggg==
+" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This shows the lack of a correlation between the Danceability of a song and its popularity, based on just the top 50 songs, of course.</p>
+<p>Please feel free to experiment with plotting other items of interest.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Print the songs that are faster than the average Top 50 and more popular than the average Top 50?</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">avg_speed</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'BeatsPerMinute'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">avg_popularity</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Popularity'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'BeatsPerMinute'</span><span class="p">]</span> <span class="o">></span> <span class="n">avg_speed</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Popularity'</span><span class="p">]</span> <span class="o">></span> <span class="n">avg_popularity</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+</div>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2020 &copy;
+      <a class="text-muted" href="https://iacs.seas.harvard.edu/">Institute for Applied Computational Science</a>
+    </span>
+  </div>
+</footer>     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
